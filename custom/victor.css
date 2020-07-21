@@ -1,0 +1,524 @@
+/*=============================================
+=            Header Area Code            =
+=============================================*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Slab:wght@700&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/*=============================================
+=            header Area Code            =
+=============================================*/
+header {
+  /*=============================================
+=            Media  Querie s Area            =
+=============================================*/
+}
+
+header .logo {
+  width: 80%;
+  margin: 10px 0;
+}
+
+header .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+header .dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+header .dropdown-item:hover {
+  background-color: #074582;
+  color: white !important;
+  margin-left: 4px;
+}
+
+header nav {
+  margin-top: 1%;
+  -webkit-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+header nav a {
+  color: #fd5f33 !important;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+header nav a:hover {
+  color: #fa9281;
+}
+
+header nav li {
+  margin-right: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.whatsapp-img {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 4%;
+  z-index: 1000;
+}
+
+/*=============================================
+=            media Query Code            =
+=============================================*/
+@media only screen and (max-width: 650px) {
+  header .logo {
+    width: 50%;
+    margin-top: 20px;
+    position: relative;
+  }
+  header .navbar-toggler {
+    position: absolute;
+    right: 0;
+    top: -50px;
+  }
+  .whatsapp-img {
+    width: 15%;
+  }
+}
+
+/* Meida Quries IPad */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  header .navbar-toggler {
+    position: absolute;
+    right: 0px;
+    top: -3px;
+  }
+  header .navbar-collapse .navbar-nav {
+    margin-top: 25px !important;
+  }
+}
+
+/* Media Quries IPad Pro */
+/*=============================================
+=            body Area Code            =
+=============================================*/
+body {
+  position: relative;
+}
+
+.body-area {
+  overflow-x: hidden;
+  padding: 30px 0;
+}
+
+.head-text {
+  color: #48cefe;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.nav-tabs {
+  text-align: center !important;
+  display: none;
+  border: none;
+  padding: 5px 0 5px 20%;
+}
+
+.nav-tabs a {
+  background-color: white;
+  color: #a6a6a6;
+  border: 1px solid #72d9fe !important;
+  border-radius: 7px !important;
+  margin: 0 25px;
+  padding: 7px 8px 4px 8px;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.nav-tabs a.active {
+  background-color: #72d9fe !important;
+  color: white !important;
+}
+
+.range-div {
+  position: relative;
+  margin-top: 30px;
+}
+
+.range-div .cen {
+  position: absolute;
+  top: -30px;
+  left: 42%;
+}
+
+.range-div .right {
+  margin-right: -115px;
+  float: right;
+}
+
+.range-div .right .i-mark {
+  display: inline;
+  margin-left: 20px;
+  position: relative;
+}
+
+.range-div .right .i-mark img {
+  width: 13%;
+}
+
+.range-div .right .i-mark .main-box {
+  position: absolute;
+  left: 0;
+}
+
+.range-div .right .i-mark .main-box .con-box {
+  position: relative;
+  width: 210px;
+  border: 1px solid #a6a6a6;
+  padding: 25px 14px 10px 14px;
+  margin-top: 15px;
+  background-color: white;
+}
+
+.range-div .right .i-mark .main-box .con-box p {
+  text-align: justify;
+  line-height: 16px;
+  color: #a6a6a6;
+  font-size: 0.5rem;
+}
+
+.range-div .right .i-mark .main-box .con-box::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: -18px;
+  left: 40px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid #a6a6a6;
+  border-left: 1px solid #a6a6a6;
+}
+
+.range-div .slidecontainer {
+  width: 100%;
+}
+
+.range-div .slider {
+  -webkit-appearance: none;
+  width: 85%;
+  height: 8px;
+  border-radius: 2px;
+  background: #d9d9d9;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.range-div .slider:hover {
+  opacity: 1;
+}
+
+.range-div .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #48cefe;
+  cursor: pointer;
+}
+
+.range-div .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #48cefe;
+  cursor: pointer;
+}
+
+.range-div button {
+  background-color: #fff;
+  border: 1px solid #48cefe;
+  font-size: 0.9rem;
+  padding: 3px 20px;
+  margin: 20px 40px;
+  border-radius: 5px;
+}
+
+.range-div .anu-btn {
+  color: white;
+  background-color: #48cefe;
+}
+
+.met-row .box {
+  border: 1px solid #48cefe;
+  border-radius: 30px;
+  padding: 20px 15px;
+  margin: 20px 15px;
+}
+
+.met-row .box img {
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+.met-row .box p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.met-row .box .price {
+  color: #a6a6a6;
+  margin: 5px 0 20px 0;
+}
+
+.met-row .box .bp {
+  color: #48cefe;
+  font-size: 0.7rem;
+  margin: 10px 0;
+}
+
+.met-row p {
+  font-size: 0.9rem;
+}
+
+.met-row button {
+  background-color: #deadf9;
+  border: none;
+  padding: 7px 40px;
+  color: white;
+  border-radius: 10px;
+  margin: 0px 0 40px 0;
+  -webkit-box-shadow: 3px 3px 3px #c2c2c2;
+          box-shadow: 3px 3px 3px #c2c2c2;
+}
+
+.met-row .phone-btn {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 7px 30px 7px 20px;
+}
+
+.met-row .phone-btn i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.com-tab .box {
+  margin: 20px 5px;
+}
+
+.com-tab .box .aya-img {
+  width: 20%;
+}
+
+.con-btn {
+  background-color: #deadf9;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .nav-tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card {
+    border: none;
+  }
+  .card .card-header {
+    display: none;
+  }
+  .card .collapse {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1;
+  }
+  .box {
+    margin: 20px 5px !important;
+  }
+  .right {
+    margin-right: -50px !important;
+  }
+  .right .i-mark {
+    margin-left: 3px !important;
+  }
+  .right .i-mark img {
+    width: 8% !important;
+  }
+  .right .i-mark .con-box {
+    display: none;
+    margin-left: -180px !important;
+    margin-top: 30px !important;
+  }
+  .right .i-mark .con-box::after {
+    left: 166px !important;
+  }
+  .right .i-mark a:active + .main-box .con-box {
+    display: block !important;
+  }
+}
+
+/*=============================================
+=            media Query Code            =
+=============================================*/
+/* Meida Quries IPad */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .nav-tabs {
+    padding-left: 8%;
+  }
+  .nav-tabs a {
+    margin: 0 8px !important;
+  }
+  .con-box {
+    display: none !important;
+    margin-left: -180px !important;
+    margin-top: 30px !important;
+  }
+  .con-box::after {
+    left: 166px !important;
+  }
+  a:active + .main-box .con-box {
+    display: block !important;
+  }
+}
+
+/* Media Quries IPad Pro */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .nav-tabs {
+    padding-left: 15% !important;
+  }
+}
+
+/*=============================================
+=            Footer Area Code            =
+=============================================*/
+/*=============================================
+=            Footer Area Code            =
+=============================================*/
+.footer {
+  background-color: #f7f7f7;
+  padding-top: 50px;
+}
+
+.footer .content {
+  padding-bottom: 30px;
+}
+
+.footer .content h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .content ul li {
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+.footer .subscribe {
+  padding-right: 10px;
+}
+
+.footer .subscribe h3 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+
+.footer .subscribe input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #c2c2c2;
+}
+
+.footer .subscribe input:focus {
+  border: 1px solid #c2c2c2;
+  outline: none;
+}
+
+.footer .subscribe button {
+  margin-top: 15px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 13px 0;
+}
+
+.footer .subscribe .icons {
+  text-align: center;
+}
+
+.footer .subscribe .icons a {
+  text-decoration: none;
+}
+
+.footer .subscribe .icons .fa {
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 10px 9px;
+  border-radius: 100%;
+}
+
+.footer .subscribe .icons .fa-instagram {
+  background-color: #ea2c59;
+}
+
+.footer .subscribe .icons .fa-facebook {
+  background-color: #3b5998;
+  padding: 10px 11px;
+}
+
+.footer .subscribe .icons .fa-linkedin {
+  background-color: #007bb6;
+}
+
+.footer .subscribe .icons .fa-youtube-play {
+  background-color: #a82400;
+}
+
+.footer .footer-img img {
+  width: 70%;
+}
+
+.footer .copyright {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+/*=============================================
+=            media Query Code            =
+=============================================*/
+/* Meida Quries IPad */
+/* Media Quries IPad Pro */
+/*# sourceMappingURL=victor.css.map */
