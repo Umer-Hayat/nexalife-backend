@@ -31,8 +31,8 @@
 if (isset($_POST['submit'])) {
   session_start();
 
-  $_SESSION['name'] = $_POST['name'];
-  $_SESSION['last_name'] = $_POST['last_name'];
+  $_SESSION['cont_name'] = $_POST['cont_name'];
+  $_SESSION['cont_last_name'] = $_POST['cont_last_name'];
   $_SESSION['m_last_name'] = $_POST['m_last_name'];
   $_SESSION['mail'] = $_POST['mail'];
   $_SESSION['celular'] = $_POST['celular'];
