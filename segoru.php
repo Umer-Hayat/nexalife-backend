@@ -26,7 +26,13 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php
 
+session_start();
+
+$_SESSION['']
+
+ ?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -44,31 +50,33 @@
     </div>
     <div class="col-lg-6">
       <div class="content">
-        <span>Primero, ¿Cual es tu nombre?</span><br>
-        <input class="empty" type="text">
-        <div class="soy">
-          <span>Soy</span>
+        <form method="post">
+          <span>Primero, ¿Cual es tu nombre?</span><br>
+          <input class="empty" name="" type="text">
+          <div class="soy">
+            <span>Soy</span>
 
-          <input type="radio" class="gender" id="male" name="gender">
-          <label for="male">
-            <img src="img/man.jpg" class="img-fluid" alt="">
-          </label>
-          <input type="radio" class="gender" id="female" name="gender">
-          <label for="female">
-            <img src="img/female.jpg" class="img-fluid" alt="">
-          </label>
-        </div>
-        <div class="naci">
-          <span>Nací el</span>
-          <input type="text" placeholder="Día">
-          <input type="text" placeholder="Mes">
-          <input type="text" placeholder="Año">
-        </div>
-        <div class="mi">
-          <span>Mi código postal es</span>
-          <input type="text">
-        </div>
-        <button>Continuar</button>
+            <input type="radio" class="gender" id="male" name="gender">
+            <label for="male">
+              <img src="img/man.jpg" class="img-fluid" alt="">
+            </label>
+            <input type="radio" class="gender" id="female" name="gender">
+            <label for="female">
+              <img src="img/female.jpg" class="img-fluid" alt="">
+            </label>
+          </div>
+          <div class="naci">
+            <span>Nací el</span>
+            <input type="text" name="day" placeholder="Día">
+            <input type="text" name="month" placeholder="Mes">
+            <input type="text" name="year" placeholder="Año">
+          </div>
+          <div class="mi">
+            <span>Mi código postal es</span>
+            <input type="text" name="postal-code">
+          </div>
+          <button type="submit" name="submit">Continuar</button>
+        </form>
 
 
       </div>

@@ -39,30 +39,33 @@
 
     <h4>¿Eres fumador?</h4>
   </div>
+  
   <div class="row text-center">
       <div class="col-md-4"></div>
-      <div class="col-md-2">
-          <div class="images">
-              <!-- <img src="img/sigarate.svg" class="img-fluid" alt=""> -->
-              <input type="radio" class="smoke" id="sig" name="smoke">
-              <label for="sig">
-                  <img src="img/sigarate.svg" class="img-fluid" alt="">
-              </label>
-              <p>Si</p>
-              <button>Regresar</button>
-          </div>
-      </div>
-      <div class="col-md-2">
-        <div class="images">
-            <!-- <img src="img/not.svg" class="img-fluid" alt=""> -->
-            <input type="radio" class="smoke" id="not" name="smoke">
-            <label for="not">
-                <img src="img/not.svg" class="img-fluid" alt="">
-            </label>
-            <p>No</p>
-            <button>Continuar</button>
+      <form method="post">
+        <div class="col-md-2">
+            <div class="images">
+                <!-- <img src="img/sigarate.svg" class="img-fluid" alt=""> -->
+                <input type="radio" class="smoke" id="sig" name="smoke">
+                <label for="sig">
+                    <img src="img/sigarate.svg" class="img-fluid" alt="">
+                </label>
+                <p>Si</p>
+                <button>Regresar</button>
+            </div>
         </div>
-    </div>
+        <div class="col-md-2">
+          <div class="images">
+              <!-- <img src="img/not.svg" class="img-fluid" alt=""> -->
+              <input type="radio" class="smoke" id="not" name="smoke">
+              <label for="not">
+                  <img src="img/not.svg" class="img-fluid" alt="">
+              </label>
+              <p>No</p>
+              <button type="submit" name="submit">Continuar</button>
+            </div>
+        </div>
+    </form>
       <div class="col-md-4"></div>
   </div>
 </section>

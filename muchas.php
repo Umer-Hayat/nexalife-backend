@@ -40,16 +40,18 @@
     <p>Nos pondremos en contacto para diseñar la mejor propuesta</p>
   <p>¿Cómo gustas que te hagamos llegar tu cotización?</p>  
   </div>
-  <div class="radio">
+  <form method="post">
+    <div class="radio">
 
-      <input type="radio" name="select" id="1">
-      <label for="1">Whats app</label><br>
-      
-      <input type="radio" name="select" id="2" value="">
-      <label for="2">Correo electrónico</label><br>
-      
-              <button>Continuar</button>
-  </div>
+        <input type="radio" name="select" id="1">
+        <label for="1">Whats app</label><br>
+        
+        <input type="radio" name="select" id="2" value="">
+        <label for="2">Correo electrónico</label><br>
+        
+        <button type="submit" name="submit">Continuar</button>
+    </div>
+  </form>
   </div>
 </section>
 

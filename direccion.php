@@ -69,6 +69,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="col-md-2"></div>
     </div>
+    <form method="post">
     <div class="row text-center">
         <div class="col-md-6">
             <input class="sb" type="text" name="street" placeholder="Calle/Avenida/Blvd">
@@ -102,10 +103,11 @@ if (isset($_POST['submit'])) {
             <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
         </div>
         <div class="col-md-2">
-            <button>Continuar</button>
+            <button type="submit" name="submit">Continuar</button>
         </div>
         <div class="col-md-4"></div>
     </div>
+    </form>
 </section>
 
 

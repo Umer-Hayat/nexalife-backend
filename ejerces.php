@@ -52,8 +52,10 @@
   <div class="col-md-2"></div>
 
   </div>
+  <form method="post">
   <div class="row">
     <div class="col-md-4"></div>
+    
     <div class="col-md-4">
       <div class="si text-center">
         <input type="radio" id="si" name="sino">
@@ -71,10 +73,11 @@
             <button>Regresar</button>
     </div>
     <div class="col-md-2">
-          <button>Continuar</button>
+          <button type="submit" name="submit">Continuar</button>
   </div>
     <div class="col-md-4"></div>
 </div>
+</form>
 </section>
 
 
