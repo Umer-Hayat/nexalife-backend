@@ -175,11 +175,11 @@
                                                 <?php
                                                 if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'female') {
                                                 ?>
-                                                <input type="radio" checked class="gender" id="female" name="solo">
+                                                <input type="radio" checked class="gender" id="female" value="female" name="solo">
 
                                                 <?php } else{ ?>
 
-                                                <input type="radio" class="gender" id="female" name="solo">
+                                                <input type="radio" class="gender" id="female" value="female" name="solo">
                                                 <?php } ?>
 
 
@@ -199,14 +199,14 @@
                                             <?php
                                                 if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'male') {
                                                 ?>
-                                                <input type="radio" checked class="gender" id="male" name="solo">
+                                                <input type="radio" checked class="gender" id="male" value="male" name="solo">
 
                                                 <?php } else{ ?>
 
-                                                <input type="radio" class="gender" id="male" name="solo">
+                                                <input type="radio" class="gender" id="male" value="male" name="solo">
 
                                                 <?php } ?>
-                                                
+
                                                     <label for="male">
                                                     <img src="img/man1.jpg" class="img-fluid" alt="">
                                                 </label>
@@ -218,7 +218,7 @@
                                             
                                         </div>
                                         <div class="col col-xs-12 b">
-                                            <input type="radio" class="gender" id="boy" name="solo">
+                                            <input type="radio" value="boy" class="gender" id="boy" name="solo">
                                                 <label for="boy">
                                                     <img src="img/boy.jpg" class="img-fluid" alt="">
                                                 </label>
@@ -229,7 +229,7 @@
                                             </div>
                                         </div>
                                         <div class="col col-xs-12 g">
-                                            <input type="radio" class="gender" id="girl" name="solo">
+                                            <input type="radio" value="girl" class="gender" id="girl" name="solo">
                                             <label for="girl">
                                                 <img src="img/girl.jpg" class="img-fluid" alt="">
                                             </label>
@@ -240,7 +240,7 @@
                                             </div>
                                         </div>
                                         <div class="col col-xs-12 o">
-                                            <input type="radio" class="gender" id="old" name="solo">
+                                            <input type="radio" value="old-man" class="gender" id="old" name="solo">
                                                 <label for="old">
                                                     <img src="img/old-man.jpg" class="img-fluid" alt="">
                                                 </label>
