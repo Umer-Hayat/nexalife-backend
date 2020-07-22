@@ -28,10 +28,19 @@
 <?php include("include/header.php") ?>
 <?php
 
-session_start();
 
-$_SESSION['']
+if (isset($_POST['submit'])) {
+  session_start();
 
+$day = $_POST['day'];
+$month = $_POST['month'];
+$year = $_POST['year'];
+$date = strval($day) . '-' . strval($month) . '-' . strval($year);
+  $_SESSION['life_name'] = $_POST['name'];
+  $_SESSION['life_gender'] = $_POST['gender'];
+  $_SESSION['life_date'] = $date;
+  $_SESSION['life_postal_code'] = $_POST['postal_code'];
+}
  ?>
 
 <!-- ============================ -->
@@ -52,7 +61,7 @@ $_SESSION['']
       <div class="content">
         <form method="post">
           <span>Primero, ¿Cual es tu nombre?</span><br>
-          <input class="empty" name="" type="text">
+          <input class="empty" name="name" type="text">
           <div class="soy">
             <span>Soy</span>
 
@@ -73,7 +82,7 @@ $_SESSION['']
           </div>
           <div class="mi">
             <span>Mi código postal es</span>
-            <input type="text" name="postal-code">
+            <input type="text" name="postal_code">
           </div>
           <button type="submit" name="submit">Continuar</button>
         </form>

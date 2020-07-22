@@ -25,7 +25,10 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
-
+<?php
+ session_start();
+ echo $_SESSION['exp_gender'];
+ ?>
 <!-- ============================ -->
   <!-- body Area -->
 <!-- ============================ -->
@@ -38,10 +41,10 @@
        
         <ul id="tabs" class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Mis seres queridos y yo</a>
+                <a id="tab-A" href="#pane-A" class="nav-link" data-toggle="tab" role="tab">Mis seres queridos y yo</a>
             </li>
             <li class="nav-item">
-                <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Solo yo</a>
+                <a id="tab-B" href="#pane-B" class="nav-link  active" data-toggle="tab" role="tab">Solo yo</a>
             </li>
             <li class="nav-item">
                 <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Solo mis seres queridos</a>
@@ -50,7 +53,7 @@
     </div>
     
         <div id="content" class="tab-content" role="tablist">
-            <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+            <div id="pane-A" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-A">
                 <div class="card-header" role="tab" id="heading-A">
                     <h5 class="mb-0">
                         <!-- Note: `data-parent` removed from here -->
@@ -149,7 +152,7 @@
                 </div>
             </div>
 
-            <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
+            <div id="pane-B" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-B">
                 <div class="card-header" role="tab" id="heading-B">
                     <h5 class="mb-0">
                         <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
@@ -168,27 +171,51 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="f">
+                                                
+                                                <?php
+                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'female') {
+                                                ?>
+                                                <input type="radio" checked class="gender" id="female" name="solo">
+
+                                                <?php } else{ ?>
+
                                                 <input type="radio" class="gender" id="female" name="solo">
+                                                <?php } ?>
+
+
                                                 <label for="female">
                                                     <img src="img/female1.jpg" class="img-fluid" alt="">
                                                 </label>
-                                                        <div class="bt">
-                                                            <ul>
-                                                                <li>Nombre<br>Edad</li>
-                                                            </ul>
-                                                        </div>
+                                                <div class="bt">
+                                                    <ul>
+                                                        <li>Nombre<br>Edad</li>
+                                                    </ul>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="col col-xs-12 m">
-                                            <input type="radio" class="gender" id="male" name="solo">
-                                                <label for="male">
+                                            
+                                            <?php
+                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'male') {
+                                                ?>
+                                                <input type="radio" checked class="gender" id="male" name="solo">
+
+                                                <?php } else{ ?>
+
+                                                <input type="radio" class="gender" id="male" name="solo">
+
+                                                <?php } ?>
+                                                
+                                                    <label for="male">
                                                     <img src="img/man1.jpg" class="img-fluid" alt="">
                                                 </label>
-                                            <div class="bt">
-                                                <ul>
-                                                    <li>Alejandro<br>22 años</li>
-                                                </ul>
-                                            </div>
+                                                <div class="bt">
+                                                    <ul>
+                                                        <li>Alejandro<br>22 años</li>
+                                                    </ul>
+                                                </div>
+                                            
                                         </div>
                                         <div class="col col-xs-12 b">
                                             <input type="radio" class="gender" id="boy" name="solo">

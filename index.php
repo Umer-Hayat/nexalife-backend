@@ -32,14 +32,14 @@
 if (isset($_POST['submit'])) {
   session_start();
 
-  $_SESSION['in-name'] = $_POST['name'];
-  $_SESSION['gender'] = $_POST['gender'];
-  $_SESSION['year'] = $_POST['year'];
-  $_SESSION['postal_code'] = $_POST['postal_code'];
+  $_SESSION['exp_name'] = $_POST['name'];
+  $_SESSION['exp_gender'] = $_POST['gender'];
+  $_SESSION['exp_year'] = $_POST['year'];
+  $_SESSION['exp_postal_code'] = $_POST['postal_code'];
 
   // echo $_SESSION['name'];
-  // echo $_SESSION['gender'];
-  // echo $_SESSION['year'];
+  echo $_SESSION['exp_gender'];
+  // echo $_SESSION['date'];
   // echo $_SESSION['postal_code'];
 
 }
@@ -69,9 +69,9 @@ if (isset($_POST['submit'])) {
           <input class="empty" name="name" type="text">
           <div class="soy">
             <span>Soy,</span>
-            <input type="radio" class="hombre" name="gender" id="man">
+            <input type="radio" class="hombre" name="gender" value="male" id="man">
             <label for="man">Hombre</label>
-            <input type="radio" class="mujer" name="gender" id="female">
+            <input type="radio" class="mujer" name="gender" value="female" id="female">
             <label for="female">Mujer</label><br>
           </div>
           <div class="tengo">

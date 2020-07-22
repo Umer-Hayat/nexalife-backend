@@ -283,6 +283,9 @@ body {
 .solo-tab input[type="radio"] {
   display: none;
 }
+.solo-tab input[type="radio"]:checked ~ input[type="radio"] label img {
+  opacity: 0.4;
+}
 
 .solo-tab input[type="radio"]:checked + label img {
   opacity: 1;
