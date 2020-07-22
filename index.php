@@ -30,7 +30,6 @@
 <?php
 
 if (isset($_POST['submit'])) {
-  session_start();
 
   $_SESSION['exp_name'] = $_POST['name'];
   $_SESSION['exp_gender'] = $_POST['gender'];

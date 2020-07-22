@@ -26,8 +26,27 @@
 
 <?php include("include/header.php") ?>
 <?php
- session_start();
- echo $_SESSION['exp_gender'];
+
+if (isset($_POST['submit'])) {
+    
+
+    
+    $mf = $_POST['mf'];
+    $ml = $_POST['ml'];
+    $mb = $_POST['mb'];
+    $mg = $_POST['mg'];
+    $mo = $_POST['mo'];
+    $sf = $_POST['sf'];
+    $sl = $_POST['sl'];
+    $sb = $_POST['sb'];
+    $sg = $_POST['sg'];
+    $so = $_POST['so'];
+
+}
+    // if ($mf >= 1) {
+    //     // $_SESSION['']
+    // }
+
  ?>
 <!-- ============================ -->
   <!-- body Area -->
@@ -44,7 +63,7 @@
                 <a id="tab-A" href="#pane-A" class="nav-link" data-toggle="tab" role="tab">Mis seres queridos y yo</a>
             </li>
             <li class="nav-item">
-                <a id="tab-B" href="#pane-B" class="nav-link  active" data-toggle="tab" role="tab">Solo yo</a>
+                <a id="tab-B" href="#pane-B" class="nav-link active" data-toggle="tab" role="tab">Solo yo</a>
             </li>
             <li class="nav-item">
                 <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Solo mis seres queridos</a>
@@ -57,14 +76,14 @@
                 <div class="card-header" role="tab" id="heading-A">
                     <h5 class="mb-0">
                         <!-- Note: `data-parent` removed from here -->
-                        <a data-toggle="collapse" href="#collapse-A" aria-expanded="true" aria-controls="collapse-A">
+                        <a data-toggle="collapse" href="#collapse-A" aria-expanded="false" aria-controls="collapse-A">
                             Mis seres queridos y yo
                         </a>
                     </h5>
                 </div>
-    
+            <form method="post">
                 <!-- Note: New place of `data-parent` -->
-                <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
+                <div id="collapse-A" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
                     <div class="card-body">
                         <div class="mis-tab">
                             <p class="tab-heading">Escenario <span>Mis seres queridos y yo</span></p>
@@ -79,11 +98,15 @@
                                                 <span class="q fq mfq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">+</button>
-                                                    <input type="hidden" id="mfhiddenVal" value="0"/>
+                                                    <input type="hidden" name="mf" id="mfhiddenVal" value="0"/>
                                                     <span id="mftheCount">0</span>
                                                     <button onclick="decrement('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">-</button>
                                                     <ul id="mfl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <!-- <li>Nombre<br>Edad</li> -->
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="number" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -94,7 +117,7 @@
                                                 <div class="bt">
 
                                                     <button onclick="increment('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">+</button>
-                                                    <input type="hidden" id="mmhiddenVal" value="0"/>
+                                                    <input type="hidden" name="ml" id="mmhiddenVal" value="0"/>
                                                 <span id="mmtheCount">0</span>
                                                 <button onclick="decrement('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">-</button>
                                                     <ul id="ml">
@@ -107,7 +130,7 @@
                                             <span class="q bq mbq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">+</button>
-                                                    <input type="hidden" id="mbhiddenVal" value="0"/>
+                                                    <input type="hidden" name="mb" id="mbhiddenVal" value="0"/>
                                                     <span id="mbtheCount">0</span>
                                                     <button onclick="decrement('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">-</button>
                                                     <ul id="mbl">
@@ -120,7 +143,7 @@
                                             <span class="q gq mgq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">+</button>
-                                                    <input type="hidden" id="mghiddenVal" value="0"/>
+                                                    <input type="hidden" name="mg" id="mghiddenVal" value="0"/>
                                                     <span id="mgtheCount">0</span>
                                                     <button onclick="decrement('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">-</button>
                                                     <ul id="mgl">
@@ -134,7 +157,7 @@
                                             <span class="q oq moq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">+</button>
-                                                    <input type="hidden" id="mohiddenVal" value="0"/>
+                                                    <input type="hidden" name="mo" id="mohiddenVal" value="0"/>
                                                     <span id="motheCount">0</span>
                                                     <button onclick="decrement('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">-</button>
                                                     <ul id="mol">
@@ -155,12 +178,12 @@
             <div id="pane-B" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-B">
                 <div class="card-header" role="tab" id="heading-B">
                     <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
+                        <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="true" aria-controls="collapse-B">
                             Solo yo
                         </a>
                     </h5>
                 </div>
-                <div id="collapse-B" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
+                <div id="collapse-B" class="collapse  show" data-parent="#content" role="tabpanel" aria-labelledby="heading-B">
                     <div class="card-body">
                         <div class="solo-tab">
                             <p class="tab-heading">Escenario <span>Solo yo</span></p>
@@ -283,7 +306,7 @@
                                                 <span class="q fq sfq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">+</button>
-                                                    <input type="hidden" id="sfhiddenVal" value="0"/>
+                                                    <input type="hidden" name="sf" id="sfhiddenVal" value="0"/>
                                                     <span id="sftheCount">0</span>
                                                     <button onclick="decrement('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">-</button>
                                                     <ul id="sfl">
@@ -298,7 +321,7 @@
                                                 <div class="bt">
 
                                                     <button onclick="increment('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">+</button>
-                                                    <input type="hidden" id="smhiddenVal" value="0"/>
+                                                    <input type="hidden" name="sm" id="smhiddenVal" value="0"/>
                                                 <span id="smtheCount">0</span>
                                                 <button onclick="decrement('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">-</button>
                                                     <ul id="sl">
@@ -311,7 +334,7 @@
                                             <span class="q bq sbq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">+</button>
-                                                    <input type="hidden" id="sbhiddenVal" value="0"/>
+                                                    <input type="hidden" name="sb" id="sbhiddenVal" value="0"/>
                                                     <span id="sbtheCount">0</span>
                                                     <button onclick="decrement('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">-</button>
                                                     <ul id="sbl">
@@ -324,7 +347,7 @@
                                             <span class="q gq sgq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">+</button>
-                                                    <input type="hidden" id="sghiddenVal" value="0"/>
+                                                    <input type="hidden" name="sg" id="sghiddenVal" value="0"/>
                                                     <span id="sgtheCount">0</span>
                                                     <button onclick="decrement('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">-</button>
                                                     <ul id="sgl">
@@ -338,7 +361,7 @@
                                             <span class="q oq soq">?</span>
                                                 <div class="bt">
                                                     <button onclick="increment('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">+</button>
-                                                    <input type="hidden" id="sohiddenVal" value="0"/>
+                                                    <input type="hidden" name="so" id="sohiddenVal" value="0"/>
                                                     <span id="sotheCount">0</span>
                                                     <button onclick="decrement('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">-</button>
                                                     <ul id="sol">
@@ -357,10 +380,10 @@
             </div>
         </div>
         <div class="container text-right">
-            <button class="con-btn">Continuar</button>
-
+            <button type="submit" name="submit" class="con-btn">Continuar</button>
+    
         </div>
-
+        </form>
     </div>
 </section>
 
@@ -372,6 +395,17 @@
 
 
     <script type="text/javascript">
+
+        var gender = "<?php echo $_SESSION['exp_gender']; ?>";
+
+        if (gender == 'male') {
+            increment('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml');
+            increment('smhiddenVal','smtheCount', 'sm-img','smq','sl');
+        }
+        if (gender == 'female') {
+            increment('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl');
+            increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl');
+        }
 
         function increment(hidenval,theCount,img,q,l){
             var counter = parseInt($(`#${hidenval}`).val());

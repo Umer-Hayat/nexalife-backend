@@ -30,7 +30,6 @@
 
 <?php
 if (isset($_POST['submit'])) {
-  session_start();
 
   $_SESSION['street'] = $_POST['street'];
   $_SESSION['no-ext'] = $_POST['no-ext'];
