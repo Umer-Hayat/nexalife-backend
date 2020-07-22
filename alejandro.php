@@ -351,7 +351,11 @@ if (isset($_POST['submit'])) {
                                                 <span id="smtheCount">0</span>
                                                 <button onclick="decrement('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">-</button>
                                                     <ul id="sl">
-                                                        <li>Alejandro<br>22 años</li>
+                                                        <!-- <li>Alejandro<br>22 años</li> -->
+                                                        <li>
+                                                            <input type="text" name="name" value="Alejandro" placeholder="Nombre"><br>
+                                                            <input type="text" value="22 años" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
