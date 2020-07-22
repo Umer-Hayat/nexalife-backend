@@ -212,10 +212,15 @@ body {
   display: none;
 }
 
-.card-body .f-img .bt li {
-  color: silver;
-  text-align: left;
-  font-size: 0.9rem;
+.card-body .f-img .bt li input {
+  border: none;
+  font-size: 13px;
+  width: 100%;
+}
+
+.card-body .f-img .bt li input:focus {
+  background-color: none;
+  outline: none;
 }
 
 .card-body .f-img .f {
@@ -282,9 +287,6 @@ body {
 
 .solo-tab input[type="radio"] {
   display: none;
-}
-.solo-tab input[type="radio"]:checked ~ input[type="radio"] label img {
-  opacity: 0.4;
 }
 
 .solo-tab input[type="radio"]:checked + label img {

@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
                         </a>
                     </h5>
                 </div>
-            <form method="post">
+            <!-- <form method="post"> -->
                 <!-- Note: New place of `data-parent` -->
                 <div id="collapse-A" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
                     <div class="card-body">
@@ -102,10 +102,9 @@ if (isset($_POST['submit'])) {
                                                     <span id="mftheCount">0</span>
                                                     <button onclick="decrement('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">-</button>
                                                     <ul id="mfl">
-                                                        <!-- <li>Nombre<br>Edad</li> -->
                                                         <li>
                                                             <input type="text" name="name" placeholder="Nombre"><br>
-                                                            <input type="number" name="age" placeholder="Edad">
+                                                            <input type="text" name="age" placeholder="Edad">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -121,7 +120,10 @@ if (isset($_POST['submit'])) {
                                                 <span id="mmtheCount">0</span>
                                                 <button onclick="decrement('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">-</button>
                                                     <ul id="ml">
-                                                        <li>Alejandro<br>22 años</li>
+                                                        <li>
+                                                            <input type="text" name="name" value="Alejandro" placeholder="Nombre"><br>
+                                                            <input type="text" value="22 años" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -134,7 +136,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="mbtheCount">0</span>
                                                     <button onclick="decrement('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">-</button>
                                                     <ul id="mbl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -147,7 +152,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="mgtheCount">0</span>
                                                     <button onclick="decrement('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">-</button>
                                                     <ul id="mgl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             
@@ -161,7 +169,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="motheCount">0</span>
                                                     <button onclick="decrement('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">-</button>
                                                     <ul id="mol">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -211,7 +222,10 @@ if (isset($_POST['submit'])) {
                                                 </label>
                                                 <div class="bt">
                                                     <ul>
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 
@@ -247,7 +261,10 @@ if (isset($_POST['submit'])) {
                                                 </label>
                                             <div class="bt">
                                                 <ul>
-                                                    <li>Nombre<br>Edad</li>
+                                                    <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -258,7 +275,10 @@ if (isset($_POST['submit'])) {
                                             </label>
                                             <div class="bt">
                                                 <ul>
-                                                    <li>Nombre<br>Edad</li>
+                                                    <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -269,7 +289,10 @@ if (isset($_POST['submit'])) {
                                                 </label>
                                             <div class="bt">
                                                 <ul>
-                                                    <li>Nombre<br>Edad</li>
+                                                    <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -310,7 +333,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="sftheCount">0</span>
                                                     <button onclick="decrement('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">-</button>
                                                     <ul id="sfl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -338,7 +364,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="sbtheCount">0</span>
                                                     <button onclick="decrement('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">-</button>
                                                     <ul id="sbl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -351,7 +380,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="sgtheCount">0</span>
                                                     <button onclick="decrement('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">-</button>
                                                     <ul id="sgl">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             
@@ -365,7 +397,10 @@ if (isset($_POST['submit'])) {
                                                     <span id="sotheCount">0</span>
                                                     <button onclick="decrement('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">-</button>
                                                     <ul id="sol">
-                                                        <li>Nombre<br>Edad</li>
+                                                        <li>
+                                                            <input type="text" name="name" placeholder="Nombre"><br>
+                                                            <input type="text" name="age" placeholder="Edad">
+                                                        </li>
                                                     </ul>
                                                 </div>
                                         </div>
@@ -383,7 +418,7 @@ if (isset($_POST['submit'])) {
             <button type="submit" name="submit" class="con-btn">Continuar</button>
     
         </div>
-        </form>
+        <!-- </form> -->
     </div>
 </section>
 
