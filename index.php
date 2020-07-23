@@ -65,9 +65,9 @@ if (isset($_POST['submit'])) {
           <input class="empty" required name="name" type="text">
           <div class="soy">
             <span>Soy,</span>
-            <input type="radio" class="hombre" name="gender" value="male" id="man" required>
+            <input type="radio" class="hombre" name="gender" value="male" id="man" autofocus required>
             <label for="man">Hombre</label>
-            <input type="radio" class="mujer" name="gender" value="female" id="female" required>
+            <input type="radio" class="mujer" name="gender" value="female" id="female" autofocus required>
             <label for="female">Mujer</label><br>
           </div>
           <div class="tengo">

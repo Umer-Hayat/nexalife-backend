@@ -30,6 +30,9 @@
 
 if (isset($_POST['submit'])) {
   $_SESSION['do-exercise'] = $_POST['sino'];
+
+
+   echo '<script>window.location.replace("practicas.php")</script>';
 }
 
  ?>
@@ -64,9 +67,9 @@ if (isset($_POST['submit'])) {
     
     <div class="col-md-4">
       <div class="si text-center">
-        <input type="radio" id="si" value="yes" name="sino">
+        <input type="radio" id="si" value="yes" name="sino" autofocus required>
         <label for="si"><p>Si</p></label><br>
-        <input type="radio" id="no" value="no" name="sino">
+        <input type="radio" id="no" value="no" name="sino" autofocus required>
         <label for="no"><p>No</p></label>
       </div>
     </div>
@@ -76,7 +79,7 @@ if (isset($_POST['submit'])) {
   <div class="row text-center">
     <div class="col-md-4"></div>
     <div class="col-md-2">
-            <button>Regresar</button>
+            <button type="button"> <a style="text-decoration: none; color: white;" href="eres.php">Regresar</a></button>
     </div>
     <div class="col-md-2">
           <button type="submit" name="submit">Continuar</button>

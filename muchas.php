@@ -52,10 +52,10 @@ if (isset($_POST['submit'])) {
   <form method="post">
     <div class="radio">
       <form method="post">
-        <input type="radio" name="select" value="whatsapp" id="1">
+        <input type="radio" name="select" value="whatsapp" id="1" autofocus required>
         <label for="1">Whats app</label><br>
         
-        <input type="radio" name="select" id="2" value="email">
+        <input type="radio" name="select" id="2" value="email" autofocus required>
         <label for="2">Correo electrónico</label><br>
         
         <button type="submit" name="submit">Continuar</button>

@@ -49,17 +49,17 @@ if (isset($_POST['submit'])) {
 
       <div class="col-md-2">
           <div class="images">
-              <input type="radio" class="smoke" id="sig" value="yes" name="smoke" required>
+              <input type="radio" class="smoke" id="sig" value="yes" name="smoke" autofocus required>
               <label for="sig">
                   <img src="img/sigarate.svg" class="img-fluid" alt="">
               </label>
               <p>Si</p>
-              <button> <a style="text-decoration: none; color: #DED1FD;" href="segoru.php">Regresar</a></button>
+              <button type="button"> <a style="text-decoration: none; color: white;" href="segoru.php">Regresar</a></button>
           </div>
       </div>
       <div class="col-md-2">
         <div class="images">
-            <input type="radio" class="smoke" value="not" id="not" name="smoke" required>
+            <input type="radio" class="smoke" value="not" id="not" name="smoke" autofocus required>
             <label for="not">
                 <img src="img/not.svg" class="img-fluid" alt="">
             </label>

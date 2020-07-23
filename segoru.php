@@ -68,11 +68,11 @@ $date = strval($day) . '-' . strval($month) . '-' . strval($year);
           <div class="soy">
             <span>Soy</span>
 
-            <input type="radio" class="gender" id="male" name="gender" required>
+            <input type="radio" class="gender" id="male" name="gender" autofocus required>
             <label for="male">
               <img src="img/man.jpg" class="img-fluid" alt="">
             </label>
-            <input type="radio" class="gender" id="female" name="gender" required>
+            <input type="radio" class="gender" id="female" name="gender" autofocus required>
             <label for="female">
               <img src="img/female.jpg" class="img-fluid" alt="">
             </label>
