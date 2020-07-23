@@ -26,7 +26,14 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php
 
+if (isset($_POST['submit'])) {
+  $_SESSION['do-practise'] = $_POST['sino'];
+  echo $_SESSION['do-practise'];
+}
+
+?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -37,30 +44,30 @@
 
     <h4>¿Practicas algún deporte de riesgo?</h4>
   </div>
-  <div class="row text-center">
+ <div class="row text-center">
   <div class="col-md-2"></div>
     <div class="col-md-1">
       <img src="img/i.svg" class="img-fluid" alt="">
     </div>
       <div class="col-md-7">
         <div class="content text-left">
-          <p>Se entiende por deportes de riesgo los siguientes: escalada deportiva, alpinismo, paracaidismo,
-               vuelo sin motor, parapente y salto base, carrera de coches o motos, deportes sub acuáticos, 
-               surf, puénting, entre otros deportes a consideración de la aseguradora.</p>
+          <p>Se entiende por profesión de riesgo aquella en la que el riesgo asumido es mayor, tal como 
+            bomberos, personal de emergencia, policías, mineros, petroleros, mecánicos, 
+            acróbatas, pilotos, boxeadores, motociclismo, entre otros a consideración de la aseguradora.</p>
         </div>
     </div>
   <div class="col-md-2"></div>
 
   </div>
   <form method="post">
-  
   <div class="row">
     <div class="col-md-4"></div>
+    
     <div class="col-md-4">
       <div class="si text-center">
-        <input type="radio" id="si" name="sino">
+        <input type="radio" id="si" value="yes" name="sino">
         <label for="si"><p>Si</p></label><br>
-        <input type="radio" id="no" name="sino">
+        <input type="radio" id="no" value="no" name="sino">
         <label for="no"><p>No</p></label>
       </div>
     </div>
@@ -74,11 +81,10 @@
     </div>
     <div class="col-md-2">
           <button type="submit" name="submit">Continuar</button>
-    </div>
-      <div class="col-md-4"></div>
   </div>
-  
-  </form>
+    <div class="col-md-4"></div>
+</div>
+</form>
 </section>
 
 <!-- ============================ -->

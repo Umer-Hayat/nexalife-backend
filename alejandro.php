@@ -27,16 +27,13 @@
 <?php include("include/header.php") ?>
 <?php
 
-if (isset($_POST['submit'])) {
-    
-
-    
+if (isset($_POST['mis_submit'])) {
+ 
     $mf = $_POST['mf'];
     $ml = $_POST['ml'];
     $mb = $_POST['mb'];
     $mg = $_POST['mg'];
     $mo = $_POST['mo'];
-    
 
     if ($mf>0) {
         $mfname = $_POST['mfname'];
@@ -58,6 +55,11 @@ if (isset($_POST['submit'])) {
         $moname = $_POST['moname'];
         $moage = $_POST['moage'];
     }
+    echo " hello mis";
+}
+
+// Solo Tab data
+if (isset($_POST['solo_submit'])) {
 
     $solo = $_POST['solo'];
 
@@ -81,10 +83,15 @@ if (isset($_POST['submit'])) {
         $soloname = $_POST['soloname'];
         $soloage = $_POST['soloage'];
     }
+    echo " hello solo";
+}
 
+
+// Quer tab data
+if (isset($_POST['quer_submit'])) {
 
     $sf = $_POST['sf'];
-    $sl = $_POST['sl'];
+    $sm = $_POST['sm'];
     $sb = $_POST['sb'];
     $sg = $_POST['sg'];
     $so = $_POST['so'];
@@ -108,12 +115,9 @@ if (isset($_POST['submit'])) {
         $soname = $_POST['soname'];
         $soage = $_POST['soage'];
     }
+    echo " hello quer";
 
 }
-    // if ($mf >= 1) {
-    //     // $_SESSION['']
-    // }
-
  ?>
 <!-- ============================ -->
   <!-- body Area -->
@@ -148,7 +152,7 @@ if (isset($_POST['submit'])) {
                         </a>
                     </h5>
                 </div>
-            <!-- <form method="post"> -->
+            <form method="post">
                 <!-- Note: New place of `data-parent` -->
                 <div id="collapse-A" class="collapse" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
                     <div class="card-body">
@@ -164,10 +168,10 @@ if (isset($_POST['submit'])) {
                                                 <img src="img/female1.jpg" class="img-fluid mfe-img" alt="">
                                                 <span class="q fq mfq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">+</button>
                                                     <input type="hidden" name="mf" id="mfhiddenVal" value="0"/>
                                                     <span id="mftheCount">0</span>
-                                                    <button onclick="decrement('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">-</button>
                                                     <ul id="mfl">
                                                         <li>
                                                             <input type="text" name="mfname" placeholder="Nombre"><br>
@@ -182,10 +186,10 @@ if (isset($_POST['submit'])) {
                                             <span class="q mq mmq">?</span>
                                                 <div class="bt">
 
-                                                    <button onclick="increment('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">+</button>
+                                                    <button type="button" onclick="increment('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">+</button>
                                                     <input type="hidden" name="ml" id="mmhiddenVal" value="0"/>
                                                 <span id="mmtheCount">0</span>
-                                                <button onclick="decrement('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">-</button>
+                                                <button type="button" onclick="decrement('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">-</button>
                                                     <ul id="ml">
                                                         <li>
                                                             <input type="text" name="mmname" value="Alejandro" placeholder="Nombre"><br>
@@ -198,10 +202,10 @@ if (isset($_POST['submit'])) {
                                             <img src="img/boy.jpg" class="img-fluid mb-img" alt="">
                                             <span class="q bq mbq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">+</button>
                                                     <input type="hidden" name="mb" id="mbhiddenVal" value="0"/>
                                                     <span id="mbtheCount">0</span>
-                                                    <button onclick="decrement('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('mbhiddenVal','mbtheCount', 'mb-img','mbq','mbl')" class="button">-</button>
                                                     <ul id="mbl">
                                                         <li>
                                                             <input type="text" name="mbname" placeholder="Nombre"><br>
@@ -214,10 +218,10 @@ if (isset($_POST['submit'])) {
                                             <img src="img/girl.jpg" class="img-fluid mg-img" alt="">
                                             <span class="q gq mgq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">+</button>
                                                     <input type="hidden" name="mg" id="mghiddenVal" value="0"/>
                                                     <span id="mgtheCount">0</span>
-                                                    <button onclick="decrement('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('mghiddenVal','mgtheCount', 'mg-img','mgq','mgl')" class="button">-</button>
                                                     <ul id="mgl">
                                                         <li>
                                                             <input type="text" name="mgname" placeholder="Nombre"><br>
@@ -231,10 +235,10 @@ if (isset($_POST['submit'])) {
                                             <img src="img/old-man.jpg" class="img-fluid mo-img" alt="">
                                             <span class="q oq moq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">+</button>
+                                                    <button type="button" onclick="increment('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">+</button>
                                                     <input type="hidden" name="mo" id="mohiddenVal" value="0"/>
                                                     <span id="motheCount">0</span>
-                                                    <button onclick="decrement('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('mohiddenVal','motheCount', 'mo-img','moq','mol')" class="button">-</button>
                                                     <ul id="mol">
                                                         <li>
                                                             <input type="text" name="moname" placeholder="Nombre"><br>
@@ -247,6 +251,10 @@ if (isset($_POST['submit'])) {
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-1"></div>
+                            </div>
+                            <div class="container text-right">
+                            <!--     <button type="submit" name="mis_submit" class="con-btn">Continuar</button> -->
+                            <input type="submit" name="mis_submit" class="con-btn" value="Continuar">
                             </div>
                         </div>
                     </div>
@@ -372,6 +380,10 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-lg-2 col-md-1"></div>
                             </div>
+                            <div class="container text-right">
+                                <!-- <button type="submit" name="solo_submit" class="con-btn">Continuar</button> -->
+                                <input type="submit" name="solo_submit" class="con-btn" value="Continuar">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -484,16 +496,19 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="col-lg-2 col-md-1"></div>
                             </div>
+                            <div class="container text-right">
+                                <input type="submit" name="quer_submit" class="con-btn" value="Continuar">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container text-right">
+        <!-- <div class="container text-right">
             <button type="submit" name="submit" class="con-btn">Continuar</button>
     
-        </div>
-        <!-- </form> -->
+        </div> -->
+        </form>
     </div>
 </section>
 
@@ -510,11 +525,11 @@ if (isset($_POST['submit'])) {
 
         if (gender == 'male') {
             increment('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml');
-            increment('smhiddenVal','smtheCount', 'sm-img','smq','sl');
+            // increment('smhiddenVal','smtheCount', 'sm-img','smq','sl');
         }
         if (gender == 'female') {
             increment('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl');
-            increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl');
+            // increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl');
         }
 
         function increment(hidenval,theCount,img,q,l){
