@@ -36,26 +36,29 @@ if (isset($_POST['mis_submit'])) {
     $mo = $_POST['mo'];
 
     if ($mf>0) {
-        $mfname = $_POST['mfname'];
-        $mfage = $_POST['mfage'];
+        $_SESSION['mfname'] = $_POST['mfname'];
+        $_SESSION['mfage'] = $_POST['mfage'];
+
     }
     if ($ml>0) {
-        $mmname = $_POST['mmname'];
-        $mmage = $_POST['mmage'];
+        $_SESSION['mmname'] = $_POST['mmname'];
+        $_SESSION['mmage'] = $_POST['mmage'];
     }
     if ($mb>0) {
-        $mbname = $_POST['mbname'];
-        $mbage = $_POST['mbage'];
+        $_SESSION['mbname'] = $_POST['mbname'];
+        $_SESSION['mbage'] = $_POST['mbage'];
     }
     if ($mg>0) {
-        $mgname = $_POST['mgname'];
-        $mgage = $_POST['mgage'];
+        $_SESSION['mgname'] = $_POST['mgname'];
+        $_SESSION['mgage'] = $_POST['mgage'];
     }
     if ($mo>0) {
-        $moname = $_POST['moname'];
-        $moage = $_POST['moage'];
+        $_SESSION['moname'] = $_POST['moname'];
+        $_SESSION['moage'] = $_POST['moage'];
     }
-    echo " hello mis";
+    
+   echo '<script>window.location.replace("muchas.php")</script>';
+
 }
 
 // Solo Tab data
@@ -64,26 +67,27 @@ if (isset($_POST['solo_submit'])) {
     $solo = $_POST['solo'];
 
     if ($solo == 'female') {
-        $solfname = $_POST['solfname'];
-        $solfage = $_POST['solfage'];
+        $_SESSION['solfname'] = $_POST['solfname'];
+        $_SESSION['solfage'] = $_POST['solfage'];
     }
     if ($solo == 'male') {
-        $solmname = $_POST['solmname'];
-        $solmage = $_POST['solmage'];
+        $_SESSION['solmname'] = $_POST['solmname'];
+        $_SESSION['solmage'] = $_POST['solmage'];
     }
     if ($solo == 'boy') {
-        $solbname = $_POST['solbname'];
-        $solbage = $_POST['solbage'];
+        $_SESSION['solbname'] = $_POST['solbname'];
+        $_SESSION['solbage'] = $_POST['solbage'];
     }
     if ($solo == 'girl') {
-        $solgname = $_POST['solgname'];
-        $solgage = $_POST['solgage'];
+        $_SESSION['solgname'] = $_POST['solgname'];
+        $_SESSION['solgage'] = $_POST['solgage'];
     }
     if ($solo == 'old-man') {
-        $soloname = $_POST['soloname'];
-        $soloage = $_POST['soloage'];
+        $_SESSION['soloname'] = $_POST['soloname'];
+        $_SESSION['soloage'] = $_POST['soloage'];
     }
-    echo " hello solo";
+    
+    echo '<script>window.location.replace("muchas.php")</script>';
 }
 
 
@@ -96,26 +100,27 @@ if (isset($_POST['quer_submit'])) {
     $sg = $_POST['sg'];
     $so = $_POST['so'];
     if ($sf>0) {
-        $sfname = $_POST['sfname'];
-        $sfage = $_POST['sfage'];
+        $_SESSION['sfname'] = $_POST['sfname'];
+        $_SESSION['sfage'] = $_POST['sfage'];
     }
     if ($sm>0) {
-        $smname = $_POST['smname'];
-        $smage = $_POST['smage'];
+        $_SESSION['smname'] = $_POST['smname'];
+        $_SESSION['smage'] = $_POST['smage'];
     }
     if ($sb>0) {
-        $sbname = $_POST['sbname'];
-        $sbage = $_POST['sbage'];
+        $_SESSION['sbname'] = $_POST['sbname'];
+        $_SESSION['sbage'] = $_POST['sbage'];
     }
     if ($sg>0) {
-        $sgname = $_POST['sgname'];
-        $sgage = $_POST['sgage'];
+        $_SESSION['sgname'] = $_POST['sgname'];
+        $_SESSION['sgage'] = $_POST['sgage'];
     }
     if ($so>0) {
-        $soname = $_POST['soname'];
-        $soage = $_POST['soage'];
+        $_SESSION['soname'] = $_POST['soname'];
+        $_SESSION['soage'] = $_POST['soage'];
     }
-    echo " hello quer";
+    
+    echo '<script>window.location.replace("muchas.php")</script>';
 
 }
  ?>
@@ -174,8 +179,22 @@ if (isset($_POST['quer_submit'])) {
                                                     <button type="button" onclick="decrement('mfhiddenVal','mftheCount', 'mfe-img','mfq','mfl')" class="button">-</button>
                                                     <ul id="mfl">
                                                         <li>
-                                                            <input type="text" name="mfname" placeholder="Nombre"><br>
-                                                            <input type="text" name="mfage" placeholder="Edad">
+
+
+                                                            <?php
+                                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'female') {
+                                                                ?>
+                                                                <input type="text" name="mfname" value="<?php echo $_SESSION['exp_name']; ?>">
+                                                                <br>
+
+                                                                <input type="text" name="mfage" value="<?php echo $_SESSION['exp_year']; ?>">
+
+                                                                <?php } else{ ?>
+
+                                                                <input type="text" name="mfname" placeholder="Nombre"><br>
+
+                                                                <input type="text" name="mfage" placeholder="Edad">
+                                                                <?php } ?>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -192,8 +211,20 @@ if (isset($_POST['quer_submit'])) {
                                                 <button type="button" onclick="decrement('mmhiddenVal','mmtheCount', 'mm-img','mmq','ml')" class="button">-</button>
                                                     <ul id="ml">
                                                         <li>
-                                                            <input type="text" name="mmname" value="Alejandro" placeholder="Nombre"><br>
-                                                            <input type="text" value="22 años" name="mmage" placeholder="Edad">
+                                                            <?php
+                                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'male') {
+                                                                ?>
+                                                                <input type="text" name="mmname" value="<?php echo $_SESSION['exp_name']; ?>">
+                                                                <br>
+
+                                                                <input type="text" name="mmage" value="<?php echo $_SESSION['exp_year']; ?>">
+
+                                                                <?php } else{ ?>
+
+                                                                <input type="text" name="mmname" placeholder="Nombre"><br>
+
+                                                                <input type="text" name="mmage" placeholder="Edad">
+                                                                <?php } ?>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -298,8 +329,20 @@ if (isset($_POST['quer_submit'])) {
                                                 <div class="bt">
                                                     <ul>
                                                         <li>
-                                                            <input type="text" name="solfname" placeholder="Nombre"><br>
-                                                            <input type="text" name="solfage" placeholder="Edad">
+                                                            <?php
+                                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'female') {
+                                                                ?>
+                                                                <input type="text" name="solfmname" value="<?php echo $_SESSION['exp_name']; ?>">
+                                                                <br>
+
+                                                                <input type="text" name="solfmage" value="<?php echo $_SESSION['exp_year']; ?>">
+
+                                                                <?php } else{ ?>
+
+                                                                <input type="text" name="solfmname" placeholder="Nombre"><br>
+
+                                                                <input type="text" name="solfmage" placeholder="Edad">
+                                                                <?php } ?>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -326,8 +369,20 @@ if (isset($_POST['quer_submit'])) {
                                                     <ul>
                                                         <!-- <li>Alejandro<br>22 años</li> -->
                                                         <li>
-                                                            <input type="text" name="solmname" value="Alejandro" placeholder="Nombre"><br>
-                                                            <input type="text" value="22 años" name="solmage" placeholder="Edad">
+                                                            <?php
+                                                                if (isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'male') {
+                                                                ?>
+                                                                <input type="text" name="solmname" value="<?php echo $_SESSION['exp_name']; ?>">
+                                                                <br>
+
+                                                                <input type="text" name="solmage" value="<?php echo $_SESSION['exp_year']; ?>">
+
+                                                                <?php } else{ ?>
+
+                                                                <input type="text" name="solmname" placeholder="Nombre"><br>
+
+                                                                <input type="text" name="solmage" placeholder="Edad">
+                                                                <?php } ?>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -411,10 +466,10 @@ if (isset($_POST['quer_submit'])) {
                                                 <img src="img/female1.jpg" class="img-fluid sfe-img" alt="">
                                                 <span class="q fq sfq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">+</button>
                                                     <input type="hidden" name="sf" id="sfhiddenVal" value="0"/>
                                                     <span id="sftheCount">0</span>
-                                                    <button onclick="decrement('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('sfhiddenVal','sftheCount', 'sfe-img','sfq','sfl')" class="button">-</button>
                                                     <ul id="sfl">
                                                         <li>
                                                             <input type="text" name="sfname" placeholder="Nombre"><br>
@@ -429,10 +484,10 @@ if (isset($_POST['quer_submit'])) {
                                             <span class="q mq smq">?</span>
                                                 <div class="bt">
 
-                                                    <button onclick="increment('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">+</button>
                                                     <input type="hidden" name="sm" id="smhiddenVal" value="0"/>
                                                 <span id="smtheCount">0</span>
-                                                <button onclick="decrement('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">-</button>
+                                                <button type="button" onclick="decrement('smhiddenVal','smtheCount', 'sm-img','smq','sl')" class="button">-</button>
                                                     <ul id="sl">
                                                         <!-- <li>Alejandro<br>22 años</li> -->
                                                         <li>
@@ -446,10 +501,10 @@ if (isset($_POST['quer_submit'])) {
                                             <img src="img/boy.jpg" class="img-fluid sb-img" alt="">
                                             <span class="q bq sbq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">+</button>
                                                     <input type="hidden" name="sb" id="sbhiddenVal" value="0"/>
                                                     <span id="sbtheCount">0</span>
-                                                    <button onclick="decrement('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('sbhiddenVal','sbtheCount', 'sb-img','sbq','sbl')" class="button">-</button>
                                                     <ul id="sbl">
                                                         <li>
                                                             <input type="text" name="sbname" placeholder="Nombre"><br>
@@ -462,10 +517,10 @@ if (isset($_POST['quer_submit'])) {
                                             <img src="img/girl.jpg" class="img-fluid sg-img" alt="">
                                             <span class="q gq sgq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">+</button>
+                                                    <button type="button" onclick="increment('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">+</button>
                                                     <input type="hidden" name="sg" id="sghiddenVal" value="0"/>
                                                     <span id="sgtheCount">0</span>
-                                                    <button onclick="decrement('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('sghiddenVal','sgtheCount', 'sg-img','sgq','sgl')" class="button">-</button>
                                                     <ul id="sgl">
                                                         <li>
                                                             <input type="text" name="sgname" placeholder="Nombre"><br>
@@ -479,10 +534,10 @@ if (isset($_POST['quer_submit'])) {
                                             <img src="img/old-man.jpg" class="img-fluid so-img" alt="">
                                             <span class="q oq soq">?</span>
                                                 <div class="bt">
-                                                    <button onclick="increment('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">+</button>
+                                                    <button type="button" onclick="increment('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">+</button>
                                                     <input type="hidden" name="so" id="sohiddenVal" value="0"/>
                                                     <span id="sotheCount">0</span>
-                                                    <button onclick="decrement('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">-</button>
+                                                    <button type="button" onclick="decrement('sohiddenVal','sotheCount', 'so-img','soq','sol')" class="button">-</button>
                                                     <ul id="sol">
                                                         <li>
                                                             <input type="text" name="soname" placeholder="Nombre"><br>

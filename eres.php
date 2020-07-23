@@ -26,6 +26,8 @@
 
 if (isset($_POST['submit'])) {
   $_SESSION['is-smoker'] = $_POST['smoke'];
+
+   echo '<script>window.location.replace("ejerces.php")</script>';
 }
 
  ?>
@@ -47,17 +49,17 @@ if (isset($_POST['submit'])) {
 
       <div class="col-md-2">
           <div class="images">
-              <input type="radio" class="smoke" id="sig" value="yes" name="smoke">
+              <input type="radio" class="smoke" id="sig" value="yes" name="smoke" required>
               <label for="sig">
                   <img src="img/sigarate.svg" class="img-fluid" alt="">
               </label>
               <p>Si</p>
-              <button>Regresar</button>
+              <button> <a style="text-decoration: none; color: #DED1FD;" href="segoru.php">Regresar</a></button>
           </div>
       </div>
       <div class="col-md-2">
         <div class="images">
-            <input type="radio" class="smoke" value="not" id="not" name="smoke">
+            <input type="radio" class="smoke" value="not" id="not" name="smoke" required>
             <label for="not">
                 <img src="img/not.svg" class="img-fluid" alt="">
             </label>

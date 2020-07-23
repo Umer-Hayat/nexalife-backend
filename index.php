@@ -36,10 +36,7 @@ if (isset($_POST['submit'])) {
   $_SESSION['exp_year'] = $_POST['year'];
   $_SESSION['exp_postal_code'] = $_POST['postal_code'];
 
-  // echo $_SESSION['name'];
-  echo $_SESSION['exp_gender'];
-  // echo $_SESSION['date'];
-  // echo $_SESSION['postal_code'];
+   echo '<script>window.location.replace("alejandro.php")</script>';
 
 }
 
@@ -65,22 +62,22 @@ if (isset($_POST['submit'])) {
       <div class="content">
         <form method="post">
           <span>Primero, ¿Cual es tu nombre?</span><br>
-          <input class="empty" name="name" type="text">
+          <input class="empty" required name="name" type="text">
           <div class="soy">
             <span>Soy,</span>
-            <input type="radio" class="hombre" name="gender" value="male" id="man">
+            <input type="radio" class="hombre" name="gender" value="male" id="man" required>
             <label for="man">Hombre</label>
-            <input type="radio" class="mujer" name="gender" value="female" id="female">
+            <input type="radio" class="mujer" name="gender" value="female" id="female" required>
             <label for="female">Mujer</label><br>
           </div>
           <div class="tengo">
             <span>Tengo</span>
-            <input type="text" name="year">
+            <input type="text" required name="year">
             <span>años.</span>
           </div>
           <div class="mi">
             <span>Mi código postal es</span>
-            <input type="text" name="postal_code">
+            <input type="text" required name="postal_code">
           </div>
           <button type="submit" name="submit">Continuar</button>
         </form>

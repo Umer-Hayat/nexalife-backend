@@ -29,9 +29,9 @@
 <?php
 if (isset($_POST['submit'])) {
   
+  $_SESSION['sendusing'] = $_POST['select'];
 
-
-$_SESSION['sendusing'] = $_POST['select'];
+    echo '<script>window.location.replace("segoru.php")</script>';
 
 }
 

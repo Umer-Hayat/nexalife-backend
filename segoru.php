@@ -36,10 +36,13 @@ $day = $_POST['day'];
 $month = $_POST['month'];
 $year = $_POST['year'];
 $date = strval($day) . '-' . strval($month) . '-' . strval($year);
-  $_SESSION['life_name'] = $_POST['name'];
-  $_SESSION['life_gender'] = $_POST['gender'];
-  $_SESSION['life_date'] = $date;
-  $_SESSION['life_postal_code'] = $_POST['postal_code'];
+  $_SESSION['life2_name'] = $_POST['name'];
+  $_SESSION['life2_gender'] = $_POST['gender'];
+  $_SESSION['life2_date'] = $date;
+  $_SESSION['life2_postal_code'] = $_POST['postal_code'];
+
+
+  echo '<script>window.location.replace("eres.php")</script>';
 }
  ?>
 
@@ -61,28 +64,28 @@ $date = strval($day) . '-' . strval($month) . '-' . strval($year);
       <div class="content">
         <form method="post">
           <span>Primero, ¿Cual es tu nombre?</span><br>
-          <input class="empty" name="name" type="text">
+          <input class="empty" name="name" type="text" required>
           <div class="soy">
             <span>Soy</span>
 
-            <input type="radio" class="gender" id="male" name="gender">
+            <input type="radio" class="gender" id="male" name="gender" required>
             <label for="male">
               <img src="img/man.jpg" class="img-fluid" alt="">
             </label>
-            <input type="radio" class="gender" id="female" name="gender">
+            <input type="radio" class="gender" id="female" name="gender" required>
             <label for="female">
               <img src="img/female.jpg" class="img-fluid" alt="">
             </label>
           </div>
           <div class="naci">
             <span>Nací el</span>
-            <input type="text" name="day" placeholder="Día">
-            <input type="text" name="month" placeholder="Mes">
-            <input type="text" name="year" placeholder="Año">
+            <input type="text" name="day" placeholder="Día" required>
+            <input type="text" name="month" placeholder="Mes" required>
+            <input type="text" name="year" placeholder="Año" required>
           </div>
           <div class="mi">
             <span>Mi código postal es</span>
-            <input type="text" name="postal_code">
+            <input type="text" name="postal_code" required>
           </div>
           <button type="submit" name="submit">Continuar</button>
         </form>

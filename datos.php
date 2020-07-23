@@ -28,18 +28,18 @@
 <?php include("include/header.php") ?>
 
 <?php
-// if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-//   $_SESSION['cont_name'] = $_POST['cont_name'];
-//   $_SESSION['cont_last_name'] = $_POST['cont_last_name'];
-//   $_SESSION['m_last_name'] = $_POST['m_last_name'];
-//   $_SESSION['mail'] = $_POST['mail'];
-//   $_SESSION['celular'] = $_POST['celular'];
-//   $_SESSION['rfc'] = $_POST['rfc'];
-//   $_SESSION['nationality'] = $_POST['nationality'];
-//   $_SESSION['sex'] = $_POST['sex'];
-//   $_SESSION['profession'] = $_POST['profession'];
-// }
+  $_SESSION['cont_name'] = $_POST['cont_name'];
+  $_SESSION['cont_last_name'] = $_POST['cont_last_name'];
+  $_SESSION['m_last_name'] = $_POST['m_last_name'];
+  $_SESSION['mail'] = $_POST['mail'];
+  $_SESSION['celular'] = $_POST['celular'];
+  $_SESSION['rfc'] = $_POST['rfc'];
+  $_SESSION['nationality'] = $_POST['nationality'];
+  $_SESSION['sex'] = $_POST['sex'];
+  $_SESSION['profession'] = $_POST['profession'];
+}
  ?>
 
 
