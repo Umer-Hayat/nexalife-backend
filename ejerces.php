@@ -26,7 +26,13 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php
 
+if (isset($_POST['submit'])) {
+  $_SESSION['do-exercise'] = $_POST['sino'];
+}
+
+ ?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -58,9 +64,9 @@
     
     <div class="col-md-4">
       <div class="si text-center">
-        <input type="radio" id="si" name="sino">
+        <input type="radio" id="si" value="yes" name="sino">
         <label for="si"><p>Si</p></label><br>
-        <input type="radio" id="no" name="sino">
+        <input type="radio" id="no" value="no" name="sino">
         <label for="no"><p>No</p></label>
       </div>
     </div>

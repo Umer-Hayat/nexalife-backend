@@ -63,19 +63,23 @@
             <div class="row">
                 <div class="col-md-6">
                     <img src="img/id1.png" class="img-fluid" alt="">
-                    <p class="subir">Subir foto</p>
+                    <input style="display: none;" type="file" id="foto1" value="Subir foto" name="foto1">
+                    <label for="foto1"><p class="subir">Subir foto</p></label>
+                    
                 </div>
                 <div class="col-md-6">
                     <img src="img/id2.png" class="img-fluid" alt="">
-                    <p class="subir">Subir foto</p>
+                    <input style="display: none;" type="file" id="foto2" value="Subir foto" name="foto2">
+                    <label for="foto2"><p class="subir">Subir foto</p></label>
                 </div>
 
             </div>
         </div>
         <div class="col-md-4">
             <p>Comprobante de domicilio</p>
-            <img src="img/id3.jpg" class="img-fluid" alt="">
-            <p class="subir">Subir foto</p>
+            <img src="img/id3.jpg" class="img-fluid" alt=""><br>
+            <input style="display: none;" type="file" id="foto3" value="Subir foto" name="foto3">
+                    <label for="foto3"><p class="subir">Subir foto</p></label>
         </div>
         <div class="col-md-2"></div>
     </div>

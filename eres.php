@@ -21,13 +21,14 @@
   </head>
   <body>
 
-<!-- ============================ -->
-  <!-- Header Area -->
-<!-- ============================ -->
-
 <?php include("include/header.php") ?>
+<?php
 
+if (isset($_POST['submit'])) {
+  $_SESSION['is-smoker'] = $_POST['smoke'];
+}
 
+ ?>
 
 
 <!-- ============================ -->
@@ -39,42 +40,36 @@
 
     <h4>¿Eres fumador?</h4>
   </div>
-  
+  <form method="post">
   <div class="row text-center">
+
       <div class="col-md-4"></div>
-      <form method="post">
-        <div class="col-md-2">
-            <div class="images">
-                <!-- <img src="img/sigarate.svg" class="img-fluid" alt=""> -->
-                <input type="radio" class="smoke" id="sig" name="smoke">
-                <label for="sig">
-                    <img src="img/sigarate.svg" class="img-fluid" alt="">
-                </label>
-                <p>Si</p>
-                <button>Regresar</button>
-            </div>
-        </div>
-        <div class="col-md-2">
+
+      <div class="col-md-2">
           <div class="images">
-              <!-- <img src="img/not.svg" class="img-fluid" alt=""> -->
-              <input type="radio" class="smoke" id="not" name="smoke">
-              <label for="not">
-                  <img src="img/not.svg" class="img-fluid" alt="">
+              <input type="radio" class="smoke" id="sig" value="yes" name="smoke">
+              <label for="sig">
+                  <img src="img/sigarate.svg" class="img-fluid" alt="">
               </label>
-              <p>No</p>
-              <button type="submit" name="submit">Continuar</button>
-            </div>
+              <p>Si</p>
+              <button>Regresar</button>
+          </div>
+      </div>
+      <div class="col-md-2">
+        <div class="images">
+            <input type="radio" class="smoke" value="not" id="not" name="smoke">
+            <label for="not">
+                <img src="img/not.svg" class="img-fluid" alt="">
+            </label>
+            <p>No</p>
+            <button type="submit" name="submit">Continuar</button>
         </div>
-    </form>
+      </div>
+    
       <div class="col-md-4"></div>
   </div>
+  </form>
 </section>
-
-
-<!-- ============================ -->
-  <!-- Footer Area -->
-<!-- ============================ -->
-
 <?php include("include/footer.php") ?>
   </body>
 </html>

@@ -26,7 +26,16 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php
+if (isset($_POST['submit'])) {
+  
 
+
+$_SESSION['sendusing'] = $_POST['select'];
+
+}
+
+ ?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -42,14 +51,15 @@
   </div>
   <form method="post">
     <div class="radio">
-
-        <input type="radio" name="select" id="1">
+      <form method="post">
+        <input type="radio" name="select" value="whatsapp" id="1">
         <label for="1">Whats app</label><br>
         
-        <input type="radio" name="select" id="2" value="">
+        <input type="radio" name="select" id="2" value="email">
         <label for="2">Correo electrónico</label><br>
         
         <button type="submit" name="submit">Continuar</button>
+      </form>
     </div>
   </form>
   </div>
