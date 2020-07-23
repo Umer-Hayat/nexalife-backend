@@ -250,7 +250,11 @@ body {
   cursor: pointer;
 }
 
-.range-div button {
+.range-div input[type="radio"] {
+  display: none;
+}
+
+.range-div label {
   background-color: #fff;
   border: 1px solid #48cefe;
   font-size: 0.9rem;
@@ -259,7 +263,7 @@ body {
   border-radius: 5px;
 }
 
-.range-div .anu-btn {
+.range-div input[type="radio"]:checked + label {
   color: white;
   background-color: #48cefe;
 }

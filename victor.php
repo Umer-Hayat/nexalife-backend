@@ -26,7 +26,38 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php
 
+    if (isset($_POST['pro-met'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['pro-seg'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['med-met'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['med-seg'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['com-met'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['com-seg'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+    if (isset($_POST['com-aya'])) {
+        
+        echo '<script>window.location.replace("estas.php")</script>';
+    }
+
+ ?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -38,20 +69,21 @@
         <div class="tabs-div">
 
        
-        <ul id="tabs" class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Protección Básica</a>
-            </li>
-            <li class="nav-item">
-                <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Protección media</a>
-            </li>
-            <li class="nav-item">
-                <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Protección Completa</a>
-            </li>
-        </ul>
+            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Protección Básica</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Protección media</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-C" href="#pane-C" class="nav-link" data-toggle="tab" role="tab">Protección Completa</a>
+                </li>
+            </ul>
     </div>
-    
+    <form method="post">
         <div id="content" class="tab-content" role="tablist">
+            
             <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
                 <div class="card-header" role="tab" id="heading-A">
                     <h5 class="mb-0">
@@ -88,8 +120,12 @@
                                           </div>
                                         </div>
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput1');" class="slider">
-                                        <button class="anu-btn">Anual</button>
-                                        <button class="men-btn">Mensual</button>
+                                      
+                                        <br>
+                                        <input type="radio" checked name="select" id="anual">
+                                        <label for="anual" class="anu-btn">Anual</label>
+                                        <input type="radio" name="select" id="mensual">
+                                        <label for="mensual" class="men-btn">Mensual</label>
                                     </div>
                                     <div class="met-row">
                                     <div class="row met-row text-center">
@@ -103,7 +139,7 @@
                                                 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button>Continuar</button>
+                                                <button type="submit" name="pro-met">Continuar</button>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box">
@@ -115,7 +151,7 @@
                                                 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button>Continuar</button>
+                                              <button  type="submit" name="pro-seg">Continuar</button>
                                       </div>
                                     </div>
                                     <div class="text-center">
@@ -127,8 +163,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    </div>
+              </div>
     
             <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
                 <div class="card-header" role="tab" id="heading-B">
@@ -165,8 +201,11 @@
                                         
                                         <!-- <input type="range"  min="0" max="100"> -->
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput2');" class="slider">
-                                        <button class="anu-btn">Anual</button>
-                                        <button class="men-btn">Mensual</button>
+                                        <br>
+                                        <input type="radio" checked name="select2" id="anual2">
+                                        <label for="anual2" class="anu-btn">Anual</label>
+                                        <input type="radio" name="select2" id="mensual2">
+                                        <label for="mensual2" class="men-btn">Mensual</label>
                                     </div>
                                     
                                     <div class="met-row">
@@ -181,7 +220,7 @@
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button>Continuar</button>
+                                                <button type="submit" name="med-met">Continuar</button>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box">
@@ -193,7 +232,7 @@
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button>Continuar</button>
+                                              <button type="submit" name="med-seg">Continuar</button>
                                       </div>
                                     </div>
                                     <div class="text-center">
@@ -241,9 +280,11 @@
                                           </div>
                                         </div>
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput3');" class="slider">
-
-                                        <button class="anu-btn">Anual</button>
-                                        <button class="men-btn">Mensual</button>
+                                        <br>
+                                        <input type="radio" checked name="select3" id="anual3">
+                                        <label for="anual3" class="anu-btn">Anual</label>
+                                        <input type="radio" name="select3" id="mensual3">
+                                        <label for="mensual3" class="men-btn">Mensual</label>
                                     </div>
                                     <div class="met-row">
                                     <div class="row met-row text-center">
@@ -259,7 +300,7 @@
 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button>Continuar</button>
+                                                <button type="submit" name="com-met">Continuar</button>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="box">
@@ -272,7 +313,7 @@
                                                 <p class="bp">Protección por Invalidez</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button>Continuar</button>
+                                              <button type="submit" name="com-seg">Continuar</button>
                                       </div>
                                       <div class="col-md-4">
                                         <div class="box">
@@ -285,7 +326,7 @@
                                             <p class="bp">Protección por Invalidez</p>
                                         </div>
                                         <p>Detalles de coberturas</p>
-                                          <button>Continuar</button>
+                                          <button  type="submit" name="com-aya">Continuar</button>
                                   </div>
                                     </div>
                                     <div class="text-center">
@@ -299,8 +340,9 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+</form>
     </div>
 </section>
 <div class="whatsapp">
