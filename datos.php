@@ -75,10 +75,10 @@ if (isset($_POST['submit'])) {
   <form method="post">
   <div class="row text-center">
       <div class="col-md-4">
-          <input class="sb" type="text" name="name" placeholder="Nombre (s)">
+          <input class="sb" type="text" name="cont_name" placeholder="Nombre (s)">
       </div>
       <div class="col-md-4">
-          <input class="sb" type="text" name="last_name" placeholder="Apellido Paterno">
+          <input class="sb" type="text" name="cont_last_name" placeholder="Apellido Paterno">
       </div>
       <div class="col-md-4">
           <input class="sb" type="text" name="m_last_name" placeholder="Apellido Materno">

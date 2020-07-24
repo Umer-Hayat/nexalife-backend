@@ -1,5 +1,5 @@
 <?php  
 
-$con = mysqli("localhost","root","","nexalife");
+$con = new mysqli("localhost","root","","nexalife");
 
 ?>

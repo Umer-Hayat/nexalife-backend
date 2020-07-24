@@ -28,122 +28,151 @@
 <?php include("include/header.php") ?>
 <?php include("include/db.php") ?>
 <?php
+// echo  $_SESSION['soloname'];
+// echo  $_SESSION['soloage'];
+// echo  $_SESSION['do_practise'];
+// echo  $_SESSION['do_exercise'];
 
 if (isset($_POST['submit'])) {
 
-  if (isset($_SESSION['insurance_for'] and $_SESSION['insurance_for'] == "me_and_f")) {
+  if (isset($_SESSION['insurance_for']) and $_SESSION['insurance_for'] == "me_and_f") {
     
     if (isset($_SESSION['mfname'])) {
-      $mfname = $_SESSION['mfname'];
-      $mfage = $_SESSION['mfage'];
+      $mfname1 = $_SESSION['mfname'];
+      $mfage1 = $_SESSION['mfage'];
     }else{
-      $mfname = "-";
-      $mfage = "-";
+      $mfname1 = "_";
+      $mfage1 = "_";
     }
     if (isset($_SESSION['mmname'])) {
-      $mmname = $_SESSION['mmname'];
-      $mmage = $_SESSION['mmage'];
+      $mmname1 = $_SESSION['mmname'];
+      $mmage1 = $_SESSION['mmage'];
     }else{
-      $mmname = "-";
-      $mmage = "-";
+      $mmname1 = "_";
+      $mmage1 = "_";
     }
     if (isset($_SESSION['mbname'])) {
-      $mbname = $_SESSION['mbname'];
-      $mbage = $_SESSION['mbage'];
+      $mbname1 = $_SESSION['mbname'];
+      $mbage1 = $_SESSION['mbage'];
     }else{
-      $mbname = "-";
-      $mbage = "-";
+      $mbname1 = "_";
+      $mbage1 = "_";
     }
     if (isset($_SESSION['mgname'])) {
-      $mgname = $_SESSION['mgname'];
-      $mgage = $_SESSION['mgage'];
+      $mgname1 = $_SESSION['mgname'];
+      $mgage1 = $_SESSION['mgage'];
     }else{
-      $mgname = "-";
-      $mgage = "-";
+      $mgname1 = "_";
+      $mgage1 = "_";
     }
     if (isset($_SESSION['moname'])) {
-      $moname = $_SESSION['moname'];
-      $moage = $_SESSION['moage'];
+      $moname1 = $_SESSION['moname'];
+      $moage1 = $_SESSION['moage'];
     }else{
-      $moname = "-";
-      $moage = "-";
+      $moname1 = "_";
+      $moage1 = "_";
     }
   }else{
 
-      $mfname = "-";
-      $mfage = "-";
-      $mmname = "-";
-      $mmage = "-";
-      $mbname = "-";
-      $mbage = "-";
-      $mgname = "-";
-      $mgage = "-";
-      $moname = "-";
-      $moage = "-";
+      $mfname1 = "_";
+      $mfage1 = "_";
+      $mmname1 = "_";
+      $mmage1 = "_";
+      $mbname1 = "_";
+      $mbage1 = "_";
+      $mgname1 = "_";
+      $mgage1 = "_";
+      $moname1 = "_";
+      $moage1 = "_";
 
   }
 
-  if (isset($_SESSION['insurance_for'] and $_SESSION['insurance_for'] == "only_me")) {
+  if (isset($_SESSION['insurance_for']) and $_SESSION['insurance_for'] == "only_me") {
 
-      $sfname = $_SESSION['soloname'];
-      $soloage = $_SESSION['soloage'];
-      
+      $soloname1 = $_SESSION['soloname'];
+      $soloage1 = $_SESSION['soloage'];
+
     }else{
-        $soloname = "-";
-        $soloage = "-";
+        $soloname1 = "_";
+        $soloage1 = "_";
     }
     
+    // $_SESSION['insurance_for'] = "only_me";
 
+ if (isset($_SESSION['insurance_for']) and $_SESSION['insurance_for'] == "only_me") {
 
-  if (isset($_SESSION['sfname'])) {
-    $sfname = $_SESSION['sfname'];
-    $sfage = $_SESSION['sfage'];
+    if (isset($_SESSION['sfname'])) {
+      $sfname1 = $_SESSION['sfname'];
+      $sfage1 = $_SESSION['sfage'];
+    }else{
+      $sfname1 = "_";
+      $sfage1 = "_";
+    }
+    if (isset($_SESSION['smname'])) {
+      $smname1 = $_SESSION['smname'];
+      $smage1 = $_SESSION['smage'];
+    }else{
+      $smname1 = "_";
+      $smage1 = "_";
+    }
+    if (isset($_SESSION['sbname'])) {
+      $sbname1 = $_SESSION['sbname'];
+      $sbage1 = $_SESSION['sbage'];
+    }else{
+      $sbname1 = "_";
+      $sbage1 = "_";
+    }
+    if (isset($_SESSION['sgname'])) {
+      $sgname1 = $_SESSION['sgname'];
+      $sgage1 = $_SESSION['sgage'];
+    }else{
+      $sgname1 = "_";
+      $sgage1 = "_";
+    }
+    if (isset($_SESSION['soname'])) {
+      $soname1 = $_SESSION['soname'];
+      $soage1 = $_SESSION['soage'];
+    }else{
+      $soname1 = "_";
+      $soage1 = "_";
+    }
   }else{
-    $sfname = "-";
-    $sfage = "-";
-  }
-  if (isset($_SESSION['smname'])) {
-    $smname = $_SESSION['smname'];
-    $smage = $_SESSION['smage'];
-  }else{
-    $smname = "-";
-    $smage = "-";
-  }
-  if (isset($_SESSION['mbname'])) {
-    $mbname = $_SESSION['mbname'];
-    $mbage = $_SESSION['mbage'];
-  }else{
-    $mbname = "-";
-    $mbage = "-";
-  }
-  if (isset($_SESSION['mgname'])) {
-    $mgname = $_SESSION['mgname'];
-    $mgage = $_SESSION['mgage'];
-  }else{
-    $mgname = "-";
-    $mgage = "-";
-  }
-  if (isset($_SESSION['moname'])) {
-    $moname = $_SESSION['moname'];
-    $moage = $_SESSION['moage'];
-  }else{
-    $moname = "-";
-    $moage = "-";
-  }
 
+      $sfname1 = "_";
+      $sfage1 = "_";
+      $smname1 = "_";
+      $smage1 = "_";
+      $sbname1 = "_";
+      $sbage1 = "_";
+      $sgname1 = "_";
+      $sgage1 = "_";
+      $soname1 = "_";
+      $soage1 = "_";
+  }
+$_SESSION['mail'] = "abc";
 
   extract($_SESSION);
-  // $query =  "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `solfname`, `solfage`, `solmname`, `solmage`, `solgname`, `solgage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `cellular`, `rfc_nationality`, `sex`, `profession`, `streetno_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ([$exp_name],[$exp_gender],[$exp_year],[$exp_postal_code],[$mfname],[$mfage],[$mmname],[$mmage],[$mbname],[$mbage],[$mgname],[$mgage],[$moname],[$moage],[$solfname],[$solfage],[$solmname],[$solmage],[$solgname],[$solgage],[$soloname],[$soloage],[$sfname],[$smname],[$smage],[$sbname],[$sbage],[$sgname],[$sgage],[$soname],[$soage],[$sendusing],[$life2_name],[$life2_gender],[$life2_date],[$life2_postal_code],[$is_smoker],[$do_exercise],[$do_practice],[$insurance],[$type],[$price],[$cont_name],[$cont_last_name],[$m_last_name],[$mail],[$celular],[$rfc],[$sex],[$profession],[$street],[$interior],[$suburb],[$postal],[$state],[$country])";
+  // $query =  "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `solfname`, `solfage`, `solmname`, `solmage`, `solgname`, `solgage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `cellular`, `rfc_nationality`, `sex`, `profession`, `streetno_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ([$exp_name],[$exp_gender],[$exp_year],[$exp_postal_code],[$mfname1],[$mfage1],[$mmname1],[$mmage1],[$mbname1],[$mbage1],[$mgname1],[$mgage1],[$moname1],[$moage1],[$solfname],[$solfage],[$solmname],[$solmage],[$solgname],[$solgage],[$soloname1],[$soloage1],[$sfname1],[$smname1],[$smage1],[$sbname1],[$sbage1],[$sgname1],[$sgage1],[$soname],[$soage],[$sendusing],[$life2_name],[$life2_gender],[$life2_date],[$life2_postal_code],[$is_smoker],[$do_exercise],[$do_practice],[$insurance],[$type],[$price],[$cont_name],[$cont_last_name],[$m_last_name],[$mail],[$celular],[$rfc],[$sex],[$profession],[$street],[$interior],[$suburb],[$postal],[$state],[$country])";
 
-  $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ($exp_name,$exp_gender,$exp_year,$exp_postal_code,$mfname,$mfage,$mmname,$mmage,$mbname,$mbage,$mgname,$mgage,$moname,$moage,$solfname,$solfage,$solmname,$solmage,$solgname,$solgage,$soloname,$soloage,$sfname,$smname,$smage,$sbname,$sbage,$sgname,$sgage,$soname,$soage,$sendusing,$life2_name,$life2_gender,$life2_date,$life2_postal_code,$is_smoker,$do_exercise,$do_practice,$insurance,$type,$price,$cont_name,$cont_last_name,$m_last_name,$mail,$celular,$rfc,$sex,$profession,$street,$interior,$suburb,$postal,$state,$country)";
+  $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `life2_name`, `life2_gender`, `life2_date`, `life2_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ('$exp_name','$exp_gender','$exp_year','$exp_postal_code','$mfname1','$mfage1','$mmname1','$mmage1','$mbname1','$mbage1','$mgname1','$mgage1','$moname1','$moage1','$soloname1','$soloage1','$sfname1','$sfage1','$smname1','$smage1','$sbname1','$sbage1','$sgname1','$sgage1','$soname1','$soage1','$sendusing','$life2_name','$life2_gender','$life2_date','$life2_postal_code','$is_smoker','$do_exercise','$do_practise','$insurace','$type','$price','$cont_name','$cont_last_name','$m_last_name','$mail','$celular','$rfc','$nationality','$sex','$profession','$street','$no_ext','$interior','$suburb','$postal','$state','$country')";
+// die'('$query);
+    // $result = $con->query($query);
 
-    $result = $con->query($query);
+    // if ($result) {
+    //   echo "<script>alert('data inserted successfully')</script>";
+    //   session_destroy();
+    // }else{
+    //   echo "<script>alert('data Not inserted successfully')</script>";
+    // }
 
-    if ($result) {
-      echo "<script>alert('data inserted successfully')</script>";
-    }else{
-      echo "<script>alert('data Not inserted successfully')</script>";
-    }
+  if ($con->query($query) === TRUE) {
+  echo "New record created successfully";
+
+} else {
+  echo "Error: " . $query . "<br>" . $con->error;
+}
+
+$con->close();
 
 }
 
@@ -212,7 +241,7 @@ if (isset($_POST['submit'])) {
             <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
         </div>
         <div class="col-md-2">
-            <button type="submit" name="submit">Continuar</button>
+            <button type="submit" onclick="alert('Your data will be stored in database')" name="submit">Continuar</button>
         </div>
         <div class="col-md-4"></div>
     </div>

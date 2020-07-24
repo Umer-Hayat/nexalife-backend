@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
       </div>
       <div class="col-md-2">
         <div class="images">
-            <input type="radio" class="smoke" value="not" id="not" name="smoke" autofocus required>
+            <input type="radio" class="smoke" value="no" id="not" name="smoke" autofocus required>
             <label for="not">
                 <img src="img/not.svg" class="img-fluid" alt="">
             </label>
