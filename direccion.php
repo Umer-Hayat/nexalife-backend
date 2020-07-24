@@ -32,12 +32,14 @@
 if (isset($_POST['submit'])) {
 
   $_SESSION['street'] = $_POST['street'];
-  $_SESSION['no-ext'] = $_POST['no-ext'];
+  $_SESSION['no_ext'] = $_POST['no-ext'];
   $_SESSION['interior'] = $_POST['interior'];
   $_SESSION['suburb'] = $_POST['suburb'];
   $_SESSION['postal'] = $_POST['postal'];
   $_SESSION['state'] = $_POST['state'];
   $_SESSION['country'] = $_POST['country'];
+
+  echo '<script>window.location.replace("subir.php")</script>';
 }
  ?>
  

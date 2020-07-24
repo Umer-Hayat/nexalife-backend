@@ -34,15 +34,20 @@
 <section class="body-area">
 <div class="text-center">
   <h4>¡Estás a sólo un paso de adquirir tu seguro!</h4>
-  <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
+  <span class="reg"><i class="fa fa-angle-left"></i><a style="text-decoration: none; color: silver;" href="victor.php">Regresar</a></span>
   <h4 class="res">Resumen de tu seguro de vida</h4>
   <div class="row ">
     <div class="col-md-4"></div>
     <div class="col-md-4 text-center">
       <div class="box">
-        <img src="img/metlife.png" class="img-fluid" alt="">
-        <p>Anual (Pago único)</p>
-        <p class="price">$2,540.00</p>
+        
+      <img src="img/metlife.png" class="img-fluid" alt="">
+        <p> <?php if (isset($_SESSION['type'])) {
+          echo $_SESSION['type'];
+        }else{ ?> Anual <?php } ?> (Pago único)</p>
+        <p class="price">$<?php if (isset($_SESSION['price'])) {
+          echo $_SESSION['price'];
+        }else{ ?> 2,540.00 <?php } ?></p>
         <p>Coberturas</p>
         <p class="bp">Protección por fallecimiento</p>
         <p class="bp">Muerte Accidental</p>
@@ -52,7 +57,7 @@
     <div class="col-md-4"></div>
     
   </div>
-<button>Continuar</button>
+<button><a style="text-decoration: none; color: white;" href="datos.php">Continuar</a></button>
 </div>
 </section>
 

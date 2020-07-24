@@ -39,6 +39,8 @@ if (isset($_POST['submit'])) {
   $_SESSION['nationality'] = $_POST['nationality'];
   $_SESSION['sex'] = $_POST['sex'];
   $_SESSION['profession'] = $_POST['profession'];
+
+  echo '<script>window.location.replace("direccion.php")</script>';
 }
  ?>
 

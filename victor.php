@@ -29,31 +29,45 @@
 <?php
 
     if (isset($_POST['pro-met'])) {
-        
+        $_SESSION['insurace'] = "basicmet";
+        $_SESSION['type'] = $_POST['select'];
+        $_SESSION['price'] = $_POST['pro-price1'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['pro-seg'])) {
-        
+        $_SESSION['insurace'] = "basicseg";
+        $_SESSION['type'] = $_POST['select'];
+        $_SESSION['price'] = $_POST['pro-price2'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['med-met'])) {
-        
+        $_SESSION['insurace'] = "mediamet";
+        $_SESSION['type'] = $_POST['select2'];
+        $_SESSION['price'] = $_POST['med-price1'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['med-seg'])) {
-        
+        $_SESSION['insurace'] = "mediaseg";
+        $_SESSION['type'] = $_POST['select2'];
+        $_SESSION['price'] = $_POST['med-price2'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-met'])) {
-        
+        $_SESSION['insurace'] = "compmet";
+        $_SESSION['type'] = $_POST['select3'];
+        $_SESSION['price'] = $_POST['com-price1'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-seg'])) {
-        
+        $_SESSION['insurace'] = "compseg";
+        $_SESSION['type'] = $_POST['select3'];
+        $_SESSION['com-seg'] = $_POST['com-price2'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-aya'])) {
-        
+        $_SESSION['insurace'] = "compaya";
+        $_SESSION['type'] = $_POST['select3'];
+        $_SESSION['price'] = $_POST['com-price3'];
         echo '<script>window.location.replace("estas.php")</script>';
     }
 
@@ -122,9 +136,9 @@
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput1');" class="slider">
                                       
                                         <br>
-                                        <input type="radio" checked name="select" id="anual">
+                                        <input type="radio" value="anual" checked name="select" id="anual">
                                         <label for="anual" class="anu-btn">Anual</label>
-                                        <input type="radio" name="select" id="mensual">
+                                        <input type="radio" value="mensual" name="select" id="mensual">
                                         <label for="mensual" class="men-btn">Mensual</label>
                                     </div>
                                     <div class="met-row">
@@ -132,7 +146,8 @@
                                         <div class="col-md-6">
                                             <div class="box">
                                                 <img src="img/metlife.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual1">Anual (Pago único)</p>
+                                                <input type="hidden" value="2000.00" name="pro-price1">
                                                 <p class="price">$2,000.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -144,7 +159,8 @@
                                         <div class="col-md-6">
                                             <div class="box">
                                                 <img src="img/seguros.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual1">Anual (Pago único)</p>
+                                                <input type="hidden" value="2540.00" name="pro-price2">
                                                 <p class="price">$2,540.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -202,9 +218,9 @@
                                         <!-- <input type="range"  min="0" max="100"> -->
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput2');" class="slider">
                                         <br>
-                                        <input type="radio" checked name="select2" id="anual2">
+                                        <input type="radio" value="anual" checked name="select2" id="anual2">
                                         <label for="anual2" class="anu-btn">Anual</label>
-                                        <input type="radio" name="select2" id="mensual2">
+                                        <input type="radio" value="mensual" name="select2" id="mensual2">
                                         <label for="mensual2" class="men-btn">Mensual</label>
                                     </div>
                                     
@@ -213,7 +229,8 @@
                                         <div class="col-md-6">
                                             <div class="box">
                                                 <img src="img/metlife.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual2">Anual (Pago único)</p>
+                                                <input type="hidden" value="2000.00" name="med-price1">
                                                 <p class="price">$2,000.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -225,7 +242,8 @@
                                         <div class="col-md-6">
                                             <div class="box">
                                                 <img src="img/seguros.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual2">Anual (Pago único)</p>
+                                                <input type="hidden" value="2540.00" name="med-price2">
                                                 <p class="price">$2,540.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -281,9 +299,9 @@
                                         </div>
                                         <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput3');" class="slider">
                                         <br>
-                                        <input type="radio" checked name="select3" id="anual3">
+                                        <input type="radio" value="anual" checked name="select3" id="anual3">
                                         <label for="anual3" class="anu-btn">Anual</label>
-                                        <input type="radio" name="select3" id="mensual3">
+                                        <input type="radio" value="mensual" name="select3" id="mensual3">
                                         <label for="mensual3" class="men-btn">Mensual</label>
                                     </div>
                                     <div class="met-row">
@@ -291,7 +309,8 @@
                                         <div class="col-md-4">
                                             <div class="box">
                                                 <img src="img/metlife.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual3">Anual (Pago único)</p>
+                                                <input type="hidden" value="2000.00" name="com-price1">
                                                 <p class="price">$2,000.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -305,7 +324,8 @@
                                         <div class="col-md-4">
                                             <div class="box">
                                                 <img src="img/seguros.png" class="img-fluid" alt="">
-                                                <p>Anual (Pago único)</p>
+                                                <p class="anual3">Anual (Pago único)</p>
+                                                <input type="hidden" value="2540.00" name="com-price2">
                                                 <p class="price">$2,540.00</p>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
@@ -318,7 +338,8 @@
                                       <div class="col-md-4">
                                         <div class="box">
                                             <img src="img/aya.png" class="img-fluid aya-img" alt="">
-                                            <p>Anual (Pago único)</p>
+                                            <p class="anual3">Anual (Pago único)</p>
+                                            <input type="hidden" value="2540.00" name="com-price3">
                                             <p class="price">$2,540.00</p>
                                             <p>Coberturas</p>
                                             <p class="bp">Protección por fallecimiento</p>
@@ -360,6 +381,36 @@
         function updateTextInput(val , id) {
           document.getElementById(id).innerHTML=val; 
         }
+    $(document).ready(function(){
+    $('input[name=select]').on('change', function(){
+        var data = document.querySelector('input[name="select"]:checked').value;
+        if (data == 'anual') {
+            $('.anual1').html("Anual (Pago único)");
+        }else{
+            $('.anual1').html("Mensual (Pago único)");
+        }
+    });
+
+    $('input[name=select2]').on('change', function(){
+        var data = document.querySelector('input[name="select2"]:checked').value;
+        if (data == 'anual') {
+            $('.anual2').html("Anual (Pago único)");
+        }else{
+            $('.anual2').html("Mensual (Pago único)");
+        }
+    });
+
+    $('input[name=select3]').on('change', function(){
+        var data = document.querySelector('input[name="select3"]:checked').value;
+        if (data == 'anual') {
+            $('.anual3').html("Anual (Pago único)");
+        }else{
+            $('.anual3').html("Mensual (Pago único)");
+        }
+    });
+
+
+});
     </script>
   </body>
 </html>

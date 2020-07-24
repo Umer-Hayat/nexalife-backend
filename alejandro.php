@@ -28,7 +28,9 @@
 <?php
 
 if (isset($_POST['mis_submit'])) {
- 
+
+    $_SESSION['insurance_for'] = "me_and_f";
+
     $mf = $_POST['mf'];
     $ml = $_POST['ml'];
     $mb = $_POST['mb'];
@@ -64,23 +66,25 @@ if (isset($_POST['mis_submit'])) {
 // Solo Tab data
 if (isset($_POST['solo_submit'])) {
 
+    $_SESSION['insurance_for'] = "only_me";
+
     $solo = $_POST['solo'];
 
     if ($solo == 'female') {
-        $_SESSION['solfname'] = $_POST['solfname'];
-        $_SESSION['solfage'] = $_POST['solfage'];
+        $_SESSION['soloname'] = $_POST['solfname'];
+        $_SESSION['soloage'] = $_POST['solfage'];
     }
     if ($solo == 'male') {
-        $_SESSION['solmname'] = $_POST['solmname'];
-        $_SESSION['solmage'] = $_POST['solmage'];
+        $_SESSION['soloname'] = $_POST['solmname'];
+        $_SESSION['soloage'] = $_POST['solmage'];
     }
     if ($solo == 'boy') {
-        $_SESSION['solbname'] = $_POST['solbname'];
-        $_SESSION['solbage'] = $_POST['solbage'];
+        $_SESSION['soloname'] = $_POST['solbname'];
+        $_SESSION['soloage'] = $_POST['solbage'];
     }
     if ($solo == 'girl') {
-        $_SESSION['solgname'] = $_POST['solgname'];
-        $_SESSION['solgage'] = $_POST['solgage'];
+        $_SESSION['soloname'] = $_POST['solgname'];
+        $_SESSION['soloage'] = $_POST['solgage'];
     }
     if ($solo == 'old-man') {
         $_SESSION['soloname'] = $_POST['soloname'];
@@ -93,6 +97,8 @@ if (isset($_POST['solo_submit'])) {
 
 // Quer tab data
 if (isset($_POST['quer_submit'])) {
+
+    $_SESSION['insurance_for'] = "only_f";
 
     $sf = $_POST['sf'];
     $sm = $_POST['sm'];

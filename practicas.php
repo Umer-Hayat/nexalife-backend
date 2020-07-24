@@ -26,10 +26,12 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+
+
 <?php
 
 if (isset($_POST['submit'])) {
-  $_SESSION['do-practise'] = $_POST['sino'];
+  $_SESSION['do_practise'] = $_POST['sino'];
   
 
   echo '<script>window.location.replace("victor.php")</script>';

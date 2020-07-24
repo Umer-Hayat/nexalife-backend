@@ -29,7 +29,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-  $_SESSION['do-exercise'] = $_POST['sino'];
+  $_SESSION['do_exercise'] = $_POST['sino'];
 
 
    echo '<script>window.location.replace("practicas.php")</script>';

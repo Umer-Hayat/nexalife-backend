@@ -26,7 +26,128 @@
 <!-- ============================ -->
 
 <?php include("include/header.php") ?>
+<?php include("include/db.php") ?>
+<?php
 
+if (isset($_POST['submit'])) {
+
+  if (isset($_SESSION['insurance_for'] and $_SESSION['insurance_for'] == "me_and_f")) {
+    
+    if (isset($_SESSION['mfname'])) {
+      $mfname = $_SESSION['mfname'];
+      $mfage = $_SESSION['mfage'];
+    }else{
+      $mfname = "-";
+      $mfage = "-";
+    }
+    if (isset($_SESSION['mmname'])) {
+      $mmname = $_SESSION['mmname'];
+      $mmage = $_SESSION['mmage'];
+    }else{
+      $mmname = "-";
+      $mmage = "-";
+    }
+    if (isset($_SESSION['mbname'])) {
+      $mbname = $_SESSION['mbname'];
+      $mbage = $_SESSION['mbage'];
+    }else{
+      $mbname = "-";
+      $mbage = "-";
+    }
+    if (isset($_SESSION['mgname'])) {
+      $mgname = $_SESSION['mgname'];
+      $mgage = $_SESSION['mgage'];
+    }else{
+      $mgname = "-";
+      $mgage = "-";
+    }
+    if (isset($_SESSION['moname'])) {
+      $moname = $_SESSION['moname'];
+      $moage = $_SESSION['moage'];
+    }else{
+      $moname = "-";
+      $moage = "-";
+    }
+  }else{
+
+      $mfname = "-";
+      $mfage = "-";
+      $mmname = "-";
+      $mmage = "-";
+      $mbname = "-";
+      $mbage = "-";
+      $mgname = "-";
+      $mgage = "-";
+      $moname = "-";
+      $moage = "-";
+
+  }
+
+  if (isset($_SESSION['insurance_for'] and $_SESSION['insurance_for'] == "only_me")) {
+
+      $sfname = $_SESSION['soloname'];
+      $soloage = $_SESSION['soloage'];
+      
+    }else{
+        $soloname = "-";
+        $soloage = "-";
+    }
+    
+
+
+  if (isset($_SESSION['sfname'])) {
+    $sfname = $_SESSION['sfname'];
+    $sfage = $_SESSION['sfage'];
+  }else{
+    $sfname = "-";
+    $sfage = "-";
+  }
+  if (isset($_SESSION['smname'])) {
+    $smname = $_SESSION['smname'];
+    $smage = $_SESSION['smage'];
+  }else{
+    $smname = "-";
+    $smage = "-";
+  }
+  if (isset($_SESSION['mbname'])) {
+    $mbname = $_SESSION['mbname'];
+    $mbage = $_SESSION['mbage'];
+  }else{
+    $mbname = "-";
+    $mbage = "-";
+  }
+  if (isset($_SESSION['mgname'])) {
+    $mgname = $_SESSION['mgname'];
+    $mgage = $_SESSION['mgage'];
+  }else{
+    $mgname = "-";
+    $mgage = "-";
+  }
+  if (isset($_SESSION['moname'])) {
+    $moname = $_SESSION['moname'];
+    $moage = $_SESSION['moage'];
+  }else{
+    $moname = "-";
+    $moage = "-";
+  }
+
+
+  extract($_SESSION);
+  // $query =  "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `solfname`, `solfage`, `solmname`, `solmage`, `solgname`, `solgage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `cellular`, `rfc_nationality`, `sex`, `profession`, `streetno_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ([$exp_name],[$exp_gender],[$exp_year],[$exp_postal_code],[$mfname],[$mfage],[$mmname],[$mmage],[$mbname],[$mbage],[$mgname],[$mgage],[$moname],[$moage],[$solfname],[$solfage],[$solmname],[$solmage],[$solgname],[$solgage],[$soloname],[$soloage],[$sfname],[$smname],[$smage],[$sbname],[$sbage],[$sgname],[$sgage],[$soname],[$soage],[$sendusing],[$life2_name],[$life2_gender],[$life2_date],[$life2_postal_code],[$is_smoker],[$do_exercise],[$do_practice],[$insurance],[$type],[$price],[$cont_name],[$cont_last_name],[$m_last_name],[$mail],[$celular],[$rfc],[$sex],[$profession],[$street],[$interior],[$suburb],[$postal],[$state],[$country])";
+
+  $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ($exp_name,$exp_gender,$exp_year,$exp_postal_code,$mfname,$mfage,$mmname,$mmage,$mbname,$mbage,$mgname,$mgage,$moname,$moage,$solfname,$solfage,$solmname,$solmage,$solgname,$solgage,$soloname,$soloage,$sfname,$smname,$smage,$sbname,$sbage,$sgname,$sgage,$soname,$soage,$sendusing,$life2_name,$life2_gender,$life2_date,$life2_postal_code,$is_smoker,$do_exercise,$do_practice,$insurance,$type,$price,$cont_name,$cont_last_name,$m_last_name,$mail,$celular,$rfc,$sex,$profession,$street,$interior,$suburb,$postal,$state,$country)";
+
+    $result = $con->query($query);
+
+    if ($result) {
+      echo "<script>alert('data inserted successfully')</script>";
+    }else{
+      echo "<script>alert('data Not inserted successfully')</script>";
+    }
+
+}
+
+ ?>
 
 <!-- ============================ -->
   <!-- body Area -->
@@ -55,6 +176,7 @@
         </div>
         <div class="col-md-2"></div>
     </div>
+    <form method="post">
     <div class="row text-center">
         <div class="col-md-2"></div>
 
@@ -90,10 +212,11 @@
             <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
         </div>
         <div class="col-md-2">
-            <button>Continuar</button>
+            <button type="submit" name="submit">Continuar</button>
         </div>
         <div class="col-md-4"></div>
     </div>
+  </form>
 </section>
 
 <!-- ============================ -->

@@ -25,7 +25,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-  $_SESSION['is-smoker'] = $_POST['smoke'];
+  $_SESSION['is_smoker'] = $_POST['smoke'];
 
    echo '<script>window.location.replace("ejerces.php")</script>';
 }
