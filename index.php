@@ -62,22 +62,32 @@ if (isset($_POST['submit'])) {
       <div class="content">
         <form method="post">
           <span>Primero, ¿Cual es tu nombre?</span><br>
-          <input class="empty" required name="name" type="text">
+          <input class="empty" value="<?php if(isset($_SESSION['exp_name'])){ echo $_SESSION['exp_name']; } ?>" required name="name" type="text">
           <div class="soy">
             <span>Soy,</span>
+            <?php if(isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'male'){ ?>
+              <input type="radio" class="hombre" checked name="gender" value="male" id="man" autofocus required> 
+  
+            <?php }else{ ?>
             <input type="radio" class="hombre" name="gender" value="male" id="man" autofocus required>
+          <?php } ?>
             <label for="man">Hombre</label>
+            <?php if(isset($_SESSION['exp_gender']) and $_SESSION['exp_gender'] == 'female'){ ?>
+            <input type="radio" class="mujer" checked name="gender" value="female" id="female" autofocus required>
+            <?php }else{ ?>
             <input type="radio" class="mujer" name="gender" value="female" id="female" autofocus required>
+          <?php } ?>
+
             <label for="female">Mujer</label><br>
           </div>
           <div class="tengo">
             <span>Tengo</span>
-            <input type="text" required name="year">
+            <input type="text" value="<?php if(isset($_SESSION['exp_year'])){ echo $_SESSION['exp_year']; } ?>" required name="year">
             <span>años.</span>
           </div>
           <div class="mi">
             <span>Mi código postal es</span>
-            <input type="text" required name="postal_code">
+            <input type="text" value="<?php if(isset($_SESSION['exp_postal_code'])){ echo $_SESSION['exp_postal_code']; } ?>" required name="postal_code">
           </div>
           <button type="submit" name="submit">Continuar</button>
         </form>

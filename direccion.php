@@ -73,35 +73,35 @@ if (isset($_POST['submit'])) {
     <form method="post">
     <div class="row text-center">
         <div class="col-md-6">
-            <input class="sb" type="text" name="street" placeholder="Calle/Avenida/Blvd">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['street'])){ echo $_SESSION['street']; } ?>" name="street" required placeholder="Calle/Avenida/Blvd">
         </div>
         <div class="col-md-3">
-            <input class="sb" type="text" name="no-ext" placeholder="No. Ext">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['no_ext'])){ echo $_SESSION['no_ext']; } ?>" name="no-ext" required placeholder="No. Ext">
         </div>
         <div class="col-md-3">
-            <input class="sb" type="text" name="interior" placeholder="No. Interior">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['interior'])){ echo $_SESSION['interior']; } ?>" name="interior" required placeholder="No. Interior">
         </div>
     </div>
     <div class="row text-center">
         <div class="col-md-3">
-            <input class="sb" type="text" name="suburb" placeholder="Colonia">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['suburb'])){ echo $_SESSION['suburb']; } ?>" name="suburb" required placeholder="Colonia">
         </div>
         <div class="col-md-3">
-            <input class="sb" type="text" name="postal" placeholder="Código Postal">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['postal'])){ echo $_SESSION['postal']; } ?>" name="postal" required placeholder="Código Postal">
         </div>
         <!-- <div class="col-md-1"></div> -->
         <div class="col-md-3">
-            <input class="sb" type="text" name="state" placeholder="Estado">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['state'])){ echo $_SESSION['state']; } ?>" name="state" required placeholder="Estado">
         </div>
         <div class="col-md-3">
-            <input class="sb" type="text" name="country" placeholder="País">
+            <input class="sb" type="text" value="<?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; } ?>" name="country" required placeholder="País">
         </div>
     </div>
     <div class="row text-center">
         <div class="col-md-4"></div>
         <div class="col-md-2">
 
-            <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
+            <span class="reg"><i class="fa fa-angle-left"></i><a style="text-decoration: none; color: silver;" href="datos.php"> Regresar</a></span>
         </div>
         <div class="col-md-2">
             <button type="submit" name="submit">Continuar</button>

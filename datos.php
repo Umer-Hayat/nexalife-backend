@@ -75,42 +75,42 @@ if (isset($_POST['submit'])) {
   <form method="post">
   <div class="row text-center">
       <div class="col-md-4">
-          <input class="sb" type="text" name="cont_name" placeholder="Nombre (s)">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['cont_name'])){ echo $_SESSION['cont_name']; } ?>" name="cont_name" required placeholder="Nombre (s)">
       </div>
       <div class="col-md-4">
-          <input class="sb" type="text" name="cont_last_name" placeholder="Apellido Paterno">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['cont_last_name'])){ echo $_SESSION['cont_last_name']; } ?>" name="cont_last_name" required placeholder="Apellido Paterno">
       </div>
       <div class="col-md-4">
-          <input class="sb" type="text" name="m_last_name" placeholder="Apellido Materno">
-      </div>
-  </div>
-  <div class="row text-center">
-      <div class="col-md-4">
-          <input class="sb" name="mail" type="text" placeholder="Correo">
-      </div>
-      <div class="col-md-4">
-          <input class="sb" name="celular" type="text" placeholder="Celular">
-      </div>
-      <div class="col-md-4">
-          <input class="sb" type="text" name="rfc" placeholder="RFC con homoclave">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['m_last_name'])){ echo $_SESSION['m_last_name']; } ?>" name="m_last_name" required placeholder="Apellido Materno">
       </div>
   </div>
   <div class="row text-center">
       <div class="col-md-4">
-          <input class="sb" type="text" name="nationality" placeholder="Nacionalidad">
+          <input class="sb" name="mail" value="<?php if(isset($_SESSION['mail'])){ echo $_SESSION['mail']; } ?>" type="text" required placeholder="Correo">
       </div>
       <div class="col-md-4">
-          <input class="sb" style="width: 80% !important;" name="sex" type="text" placeholder="Sexo">
+          <input class="sb" name="celular" type="text" value="<?php if(isset($_SESSION['celular'])){ echo $_SESSION['celular']; } ?>" required placeholder="Celular">
       </div>
       <div class="col-md-4">
-          <input class="sb" type="text" name="profession" placeholder="Profesión">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['rfc'])){ echo $_SESSION['rfc']; } ?>" name="rfc" required placeholder="RFC con homoclave">
+      </div>
+  </div>
+  <div class="row text-center">
+      <div class="col-md-4">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['nationality'])){ echo $_SESSION['nationality']; } ?>" name="nationality" required placeholder="Nacionalidad">
+      </div>
+      <div class="col-md-4">
+          <input class="sb" style="width: 80% !important;" value="<?php if(isset($_SESSION['sex'])){ echo $_SESSION['sex']; } ?>" name="sex" type="text" required placeholder="Sexo">
+      </div>
+      <div class="col-md-4">
+          <input class="sb" type="text" value="<?php if(isset($_SESSION['profession'])){ echo $_SESSION['profession']; } ?>" name="profession" required placeholder="Profesión">
       </div>
   </div>
   <div class="row text-center">
       <div class="col-md-4"></div>
       <div class="col-md-2">
 
-          <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
+          <span class="reg"><i class="fa fa-angle-left"></i><a style="text-decoration: none; color: silver;" href="estas.php"> Regresar</a></span>
       </div>
       <div class="col-md-2">
           <button type="submit" name="submit">Continuar</button>

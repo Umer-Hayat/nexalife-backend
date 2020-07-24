@@ -69,9 +69,18 @@ if (isset($_POST['submit'])) {
     
     <div class="col-md-4">
       <div class="si text-center">
+        <?php if(isset($_SESSION['do_practise']) and $_SESSION['do_practise'] == 'yes'){ ?>
+          <input type="radio" id="si" checked value="yes" name="sino" autofocus required>
+        <?php }else{ ?>
         <input type="radio" id="si" value="yes" name="sino" autofocus required>
+      <?php } ?>
         <label for="si"><p>Si</p></label><br>
+
+        <?php if(isset($_SESSION['do_practise']) and $_SESSION['do_practise'] == 'no'){ ?>
+              <input type="radio" id="no" checked value="no" name="sino" autofocus required>
+            <?php }else{ ?>
         <input type="radio" id="no" value="no" name="sino" autofocus required>
+      <?php } ?>
         <label for="no"><p>No</p></label>
       </div>
     </div>

@@ -237,7 +237,7 @@ $con->close();
         <div class="col-md-4"></div>
         <div class="col-md-2">
 
-            <span class="reg"><i class="fa fa-angle-left"></i> Regresar</span>
+            <span class="reg"><i class="fa fa-angle-left"></i> <a style="text-decoration: none; color: silver;" href="direccion.php">Regresar</a></span>
         </div>
         <div class="col-md-2">
             <button type="submit" onclick="alert('Your data will be stored in database')" name="submit">Continuar</button>

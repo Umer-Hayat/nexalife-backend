@@ -52,10 +52,17 @@ if (isset($_POST['submit'])) {
   <form method="post">
     <div class="radio">
       <form method="post">
+        <?php if(isset($_SESSION['sendusing']) and $_SESSION['sendusing'] == 'whatsapp'){ ?>
+              <input type="radio" name="select" checked value="whatsapp" id="1" autofocus required>
+            <?php }else{ ?>
         <input type="radio" name="select" value="whatsapp" id="1" autofocus required>
+      <?php } ?>
         <label for="1">Whats app</label><br>
-        
+        <?php if(isset($_SESSION['sendusing']) and $_SESSION['sendusing'] == 'email'){ ?>
+              <input type="radio" name="select" id="2" value="email" autofocus required>
+            <?php }else{ ?>
         <input type="radio" name="select" id="2" value="email" autofocus required>
+      <?php } ?>
         <label for="2">Correo electrónico</label><br>
         
         <button type="submit" name="submit">Continuar</button>

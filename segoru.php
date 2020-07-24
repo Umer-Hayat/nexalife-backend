@@ -32,9 +32,12 @@
 if (isset($_POST['submit'])) {
   session_start();
 
-$day = $_POST['day'];
+$date= $_POST['day'];
+$_SESSION['day']  = $date;
 $month = $_POST['month'];
+$_SESSION['month']  = $month;
 $year = $_POST['year'];
+$_SESSION['y']  = $year;
 $date = strval($day) . '-' . strval($month) . '-' . strval($year);
   $_SESSION['life2_name'] = $_POST['name'];
   $_SESSION['life2_gender'] = $_POST['gender'];
@@ -64,28 +67,36 @@ $date = strval($day) . '-' . strval($month) . '-' . strval($year);
       <div class="content">
         <form method="post">
           <span>Primero, ¿Cual es tu nombre?</span><br>
-          <input class="empty" name="name" type="text" required>
+          <input class="empty" name="name" value="<?php if(isset($_SESSION['life2_name'])){ echo $_SESSION['life2_name']; } ?>" type="text" required>
           <div class="soy">
             <span>Soy</span>
-
+            <?php if(isset($_SESSION['life2_gender']) and $_SESSION['life2_gender'] == 'male'){ ?>
+              <input type="radio" class="gender" checked value="male" id="male" name="gender" autofocus required>
+            <?php }else{ ?>
             <input type="radio" class="gender" value="male" id="male" name="gender" autofocus required>
+          <?php } ?>
             <label for="male">
               <img src="img/man.jpg" class="img-fluid" alt="">
             </label>
+
+            <?php if(isset($_SESSION['life2_gender']) and $_SESSION['life2_gender'] == 'female'){ ?>
+              <input type="radio" class="gender" checked value="female" id="female" name="gender" autofocus required>
+            <?php }else{ ?>
             <input type="radio" class="gender" value="female" id="female" name="gender" autofocus required>
+          <?php } ?>
             <label for="female">
               <img src="img/female.jpg" class="img-fluid" alt="">
             </label>
           </div>
           <div class="naci">
             <span>Nací el</span>
-            <input type="text" name="day" placeholder="Día" required>
-            <input type="text" name="month" placeholder="Mes" required>
-            <input type="text" name="year" placeholder="Año" required>
+            <input type="text" value="<?php if(isset($_SESSION['day'])){ echo $_SESSION['day']; } ?>" name="day" placeholder="Día" required>
+            <input type="text" value="<?php if(isset($_SESSION['month'])){ echo $_SESSION['month']; } ?>" name="month" placeholder="Mes" required>
+            <input type="text" value="<?php if(isset($_SESSION['y'])){ echo $_SESSION['y']; } ?>" name="year" placeholder="Año" required>
           </div>
           <div class="mi">
             <span>Mi código postal es</span>
-            <input type="text" name="postal_code" required>
+            <input type="text" value="<?php if(isset($_SESSION['life2_postal_code'])){ echo $_SESSION['life2_postal_code']; } ?>" name="postal_code" required>
           </div>
           <button type="submit" name="submit">Continuar</button>
         </form>

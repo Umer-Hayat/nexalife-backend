@@ -49,7 +49,11 @@ if (isset($_POST['submit'])) {
 
       <div class="col-md-2">
           <div class="images">
+            <?php if(isset($_SESSION['is_smoker']) and $_SESSION['is_smoker'] == 'yes'){ ?>
+              <input type="radio" class="smoke" checked id="sig" value="yes" name="smoke" autofocus required>
+            <?php }else{ ?>
               <input type="radio" class="smoke" id="sig" value="yes" name="smoke" autofocus required>
+            <?php } ?>
               <label for="sig">
                   <img src="img/sigarate.svg" class="img-fluid" alt="">
               </label>
@@ -59,7 +63,11 @@ if (isset($_POST['submit'])) {
       </div>
       <div class="col-md-2">
         <div class="images">
+          <?php if(isset($_SESSION['is_smoker']) and $_SESSION['is_smoker'] == 'no'){ ?>
+              <input type="radio" class="smoke" checked value="no" id="not" name="smoke" autofocus required>
+            <?php }else{ ?>
             <input type="radio" class="smoke" value="no" id="not" name="smoke" autofocus required>
+          <?php } ?>
             <label for="not">
                 <img src="img/not.svg" class="img-fluid" alt="">
             </label>
