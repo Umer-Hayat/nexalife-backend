@@ -32,8 +32,8 @@
 if (isset($_POST['submit'])) {
   session_start();
 
-$date= $_POST['day'];
-$_SESSION['day']  = $date;
+$day= $_POST['day'];
+$_SESSION['day']  = $day;
 $month = $_POST['month'];
 $_SESSION['month']  = $month;
 $year = $_POST['year'];
