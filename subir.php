@@ -28,12 +28,21 @@
 <?php include("include/header.php") ?>
 <?php include("include/db.php") ?>
 <?php
-// echo  $_SESSION['soloname'];
-// echo  $_SESSION['soloage'];
-// echo  $_SESSION['do_practise'];
-// echo  $_SESSION['do_exercise'];
+
 
 if (isset($_POST['submit'])) {
+
+  $target_dir = "uploads/";
+  $name1 = $_FILES['foto1']['name'];
+  $foto1 = $target_dir . basename($_FILES["foto1"]["name"]);
+  $name2 = $_FILES['foto2']['name'];
+  $foto2 = $target_dir . basename($_FILES["foto2"]["name"]);
+  $name3 = $_FILES['foto3']['name'];
+  $foto3 = $target_dir . basename($_FILES["foto3"]["name"]);
+
+  move_uploaded_file($_FILES['foto1']['tmp_name'],$target_dir.$name1);
+  move_uploaded_file($_FILES['foto2']['tmp_name'],$target_dir.$name2);
+  move_uploaded_file($_FILES['foto3']['tmp_name'],$target_dir.$name3);
 
   if (isset($_SESSION['insurance_for']) and $_SESSION['insurance_for'] == "me_and_f") {
     
@@ -149,24 +158,14 @@ if (isset($_POST['submit'])) {
       $soname1 = "_";
       $soage1 = "_";
   }
-$_SESSION['mail'] = "abc";
 
   extract($_SESSION);
-  // $query =  "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `solfname`, `solfage`, `solmname`, `solmage`, `solgname`, `solgage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `lifeto_name`, `lifeto_gender`, `lifeto_date`, `lifeto_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `cellular`, `rfc_nationality`, `sex`, `profession`, `streetno_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ([$exp_name],[$exp_gender],[$exp_year],[$exp_postal_code],[$mfname1],[$mfage1],[$mmname1],[$mmage1],[$mbname1],[$mbage1],[$mgname1],[$mgage1],[$moname1],[$moage1],[$solfname],[$solfage],[$solmname],[$solmage],[$solgname],[$solgage],[$soloname1],[$soloage1],[$sfname1],[$smname1],[$smage1],[$sbname1],[$sbage1],[$sgname1],[$sgage1],[$soname],[$soage],[$sendusing],[$life2_name],[$life2_gender],[$life2_date],[$life2_postal_code],[$is_smoker],[$do_exercise],[$do_practice],[$insurance],[$type],[$price],[$cont_name],[$cont_last_name],[$m_last_name],[$mail],[$celular],[$rfc],[$sex],[$profession],[$street],[$interior],[$suburb],[$postal],[$state],[$country])";
-
-  $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `life2_name`, `life2_gender`, `life2_date`, `life2_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`) VALUES ('$exp_name','$exp_gender','$exp_year','$exp_postal_code','$mfname1','$mfage1','$mmname1','$mmage1','$mbname1','$mbage1','$mgname1','$mgage1','$moname1','$moage1','$soloname1','$soloage1','$sfname1','$sfage1','$smname1','$smage1','$sbname1','$sbage1','$sgname1','$sgage1','$soname1','$soage1','$sendusing','$life2_name','$life2_gender','$life2_date','$life2_postal_code','$is_smoker','$do_exercise','$do_practise','$insurace','$type','$price','$cont_name','$cont_last_name','$m_last_name','$mail','$celular','$rfc','$nationality','$sex','$profession','$street','$no_ext','$interior','$suburb','$postal','$state','$country')";
-// die'('$query);
-    // $result = $con->query($query);
-
-    // if ($result) {
-    //   echo "<script>alert('data inserted successfully')</script>";
-    //   session_destroy();
-    // }else{
-    //   echo "<script>alert('data Not inserted successfully')</script>";
-    // }
+  $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `life2_name`, `life2_gender`, `life2_date`, `life2_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`, `official_pic1`, `official_pic2`, `address_pic`) VALUES ('$exp_name','$exp_gender','$exp_year','$exp_postal_code','$mfname1','$mfage1','$mmname1','$mmage1','$mbname1','$mbage1','$mgname1','$mgage1','$moname1','$moage1','$soloname1','$soloage1','$sfname1','$sfage1','$smname1','$smage1','$sbname1','$sbage1','$sgname1','$sgage1','$soname1','$soage1','$sendusing','$life2_name','$life2_gender','$life2_date','$life2_postal_code','$is_smoker','$do_exercise','$do_practise','$insurace','$type','$price','$cont_name','$cont_last_name','$m_last_name','$mail','$celular','$rfc','$nationality','$sex','$profession','$street','$no_ext','$interior','$suburb','$postal','$state','$country','$foto1','$foto2','$foto2')";
 
   if ($con->query($query) === TRUE) {
-  echo "New record created successfully";
+    echo "<script>alert('data inserted successfully')</script>";
+    session_destroy();
+  // echo "New record created successfully";
 
 } else {
   echo "Error: " . $query . "<br>" . $con->error;
@@ -205,7 +204,7 @@ $con->close();
         </div>
         <div class="col-md-2"></div>
     </div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
     <div class="row text-center">
         <div class="col-md-2"></div>
 
@@ -214,13 +213,13 @@ $con->close();
             <div class="row">
                 <div class="col-md-6">
                     <img src="img/id1.png" class="img-fluid" alt="">
-                    <input style="display: none;" type="file" id="foto1" value="Subir foto" name="foto1">
+                    <input style="display: none;" type="file" id="foto1" name="foto1">
                     <label for="foto1"><p class="subir">Subir foto</p></label>
                     
                 </div>
                 <div class="col-md-6">
                     <img src="img/id2.png" class="img-fluid" alt="">
-                    <input style="display: none;" type="file" id="foto2" value="Subir foto" name="foto2">
+                    <input style="display: none;" type="file" id="foto2" name="foto2">
                     <label for="foto2"><p class="subir">Subir foto</p></label>
                 </div>
 
@@ -229,7 +228,7 @@ $con->close();
         <div class="col-md-4">
             <p>Comprobante de domicilio</p>
             <img src="img/id3.jpg" class="img-fluid" alt=""><br>
-            <input style="display: none;" type="file" id="foto3" value="Subir foto" name="foto3">
+            <input style="display: none;" type="file" id="foto3" name="foto3">
                     <label for="foto3"><p class="subir">Subir foto</p></label>
         </div>
         <div class="col-md-2"></div>
