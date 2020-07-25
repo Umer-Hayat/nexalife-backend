@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 06:46 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Jul 25, 2020 at 06:42 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,12 +44,6 @@ CREATE TABLE `user_detail` (
   `mgage` int(3) NOT NULL,
   `moname` varchar(255) NOT NULL,
   `moage` int(3) NOT NULL,
-  `solfname` varchar(255) NOT NULL,
-  `solfage` int(3) NOT NULL,
-  `solmname` varchar(255) NOT NULL,
-  `solmage` int(3) NOT NULL,
-  `solgname` varchar(255) NOT NULL,
-  `solgage` int(3) NOT NULL,
   `soloname` varchar(255) NOT NULL,
   `soloage` int(3) NOT NULL,
   `sfname` varchar(255) NOT NULL,
@@ -63,10 +57,10 @@ CREATE TABLE `user_detail` (
   `soname` varchar(255) NOT NULL,
   `soage` int(3) NOT NULL,
   `sendusing` varchar(255) NOT NULL,
-  `lifeto_name` varchar(255) NOT NULL,
-  `lifeto_gender` varchar(255) NOT NULL,
-  `lifeto_date` varchar(255) NOT NULL,
-  `lifeto_postal_code` varchar(255) NOT NULL,
+  `life2_name` varchar(255) NOT NULL,
+  `life2_gender` varchar(255) NOT NULL,
+  `life2_date` varchar(255) NOT NULL,
+  `life2_postal_code` varchar(255) NOT NULL,
   `is_smoker` varchar(255) NOT NULL,
   `do_exercise` varchar(255) NOT NULL,
   `do_practice` varchar(255) NOT NULL,
@@ -77,16 +71,21 @@ CREATE TABLE `user_detail` (
   `cont_last_name` varchar(255) NOT NULL,
   `m_last_name` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `cellular` varchar(255) NOT NULL,
-  `rfc_nationality` varchar(255) NOT NULL,
+  `celular` varchar(255) NOT NULL,
+  `rfc` varchar(255) NOT NULL,
+  `nationality` varchar(255) NOT NULL,
   `sex` varchar(255) NOT NULL,
   `profession` varchar(255) NOT NULL,
-  `streetno_ext` varchar(255) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `no_ext` varchar(40) NOT NULL,
   `interior` varchar(255) NOT NULL,
   `suburb` varchar(255) NOT NULL,
   `postal` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
-  `country` varchar(255) NOT NULL
+  `country` varchar(255) NOT NULL,
+  `official_pic1` varchar(50) NOT NULL,
+  `official_pic2` varchar(50) NOT NULL,
+  `address_pic` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
