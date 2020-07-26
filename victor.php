@@ -177,7 +177,7 @@
                                                 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button type="submit" name="pro-met">Continuar</button>
+                                                <button type="submit" name="pro-met">Contratar</button>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box">
@@ -190,7 +190,7 @@
                                                 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button  type="submit" name="pro-seg">Continuar</button>
+                                              <button  type="submit" name="pro-seg">Contratar</button>
                                       </div>
                                     </div>
                                     <div class="text-center">
@@ -260,7 +260,7 @@
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button type="submit" name="med-met">Continuar</button>
+                                                <button type="submit" name="med-met">Contratar</button>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box">
@@ -273,7 +273,7 @@
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button type="submit" name="med-seg">Continuar</button>
+                                              <button type="submit" name="med-seg">Contratar</button>
                                       </div>
                                     </div>
                                     <div class="text-center">
@@ -342,7 +342,7 @@
 
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                                <button type="submit" name="com-met">Continuar</button>
+                                                <button type="submit" name="com-met">Contratar</button>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="box">
@@ -356,7 +356,7 @@
                                                 <p class="bp">Protección por Invalidez</p>
                                             </div>
                                             <p>Detalles de coberturas</p>
-                                              <button type="submit" name="com-seg">Continuar</button>
+                                              <button type="submit" name="com-seg">Contratar</button>
                                       </div>
                                       <div class="col-md-4">
                                         <div class="box">
@@ -370,7 +370,7 @@
                                             <p class="bp">Protección por Invalidez</p>
                                         </div>
                                         <p>Detalles de coberturas</p>
-                                          <button  type="submit" name="com-aya">Continuar</button>
+                                          <button  type="submit" name="com-aya">Contratar</button>
                                   </div>
                                     </div>
                                     <div class="text-center">
