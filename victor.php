@@ -133,7 +133,30 @@
                                             </div>
                                           </div>
                                         </div>
-                                        <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput1');" class="slider">
+                                        <!-- <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput1');" class="slider"> -->
+
+                                        <input type="range" name="rangeInput" list="tickmarks" onchange="updateTextInput(this.value, 'textInput1');" class="slider">
+
+                                        <datalist id="tickmarks">
+                                          <option value="200000" label="0%"></option>
+                                          <option value="400000"></option>
+                                          <option value="500000"></option>
+                                          <option value="600000"></option>
+                                          <option value="800000"></option>
+                                          <option value="1000000"></option>
+                                          <option value="1200000"></option>
+                                          <option value="1400000"></option>
+                                          <option value="1500000"  label="50%"></option>
+                                          <option value="1600000"></option>
+                                          <option value="1800000"></option>
+                                          <option value="2000000"></option>
+                                          <option value="2200000"></option>
+                                          <option value="2400000"></option>
+                                          <option value="2500000"></option>
+                                          <option value="2600000"></option>
+                                          <option value="2800000"></option>
+                                          <option value="3000000" label="100%"></option>
+                                        </datalist>
                                       
                                         <br>
                                         <input type="radio" value="anual" checked name="select" id="anual">
