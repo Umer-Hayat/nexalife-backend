@@ -140,7 +140,7 @@
                                       <span>$3,000,000</span>
                                       <div class="i-mark">
                                         <a data-target="con">
-                                          <img src="img/i.svg" class="img-fluid" alt="">
+                                          <img src="img/i.svg" class="img-fluid" alt="">ab
                                         </a>
                                         <div class="main-box">
                                           <div id="con" class="con-box">
@@ -161,7 +161,7 @@
                                 <div class="row met-row text-center">
                                     <div class="col-md-6">
                                         <div class="box">
-                                            <img src="img/metlife.png" class="img-fluid" alt="">
+                                            <img src="img/metlife.png" class="img-fluid mb-4" alt="">
                                             <p class="anual1">Anual (Pago único)</p>
                                             <div class="pp">
                                               <span>$</span>
@@ -171,7 +171,9 @@
                                             <p class="bp">Protección por fallecimiento</p>
                                             
                                         </div>
-                                        <p>Detalles de coberturas</p>
+                                        <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                             <button type="submit" name="pro-met">Contratar</button>
                                     </div>
                                     <div class="col-md-6">
@@ -186,7 +188,9 @@
                                             <p class="bp">Protección por fallecimiento</p>
                                             
                                         </div>
-                                        <p>Detalles de coberturas</p>
+                                        <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                           <button  type="submit" name="pro-seg">Contratar</button>
                                   </div>
                                 </div>
@@ -224,7 +228,7 @@
                                           <span>$3,000,000</span>
                                           <div class="i-mark">
                                             <a data-target="con">
-                                              <img src="img/i.svg" class="img-fluid" alt="">
+                                              <img src="img/i.svg" class="img-fluid" alt="">ab
                                             </a>
                                             <div class="main-box">
                                               <div id="con" class="con-box">
@@ -248,7 +252,7 @@
                                     <div class="row met-row text-center">
                                         <div class="col-md-6">
                                             <div class="box">
-                                                <img src="img/metlife.png" class="img-fluid" alt="">
+                                                <img src="img/metlife.png" class="img-fluid mb-4" alt="">
                                                 <p class="anual2">Anual (Pago único)</p>
                                                 <div class="pp">
                                                   <span>$</span>
@@ -258,7 +262,9 @@
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
-                                            <p>Detalles de coberturas</p>
+                                            <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                                 <button type="submit" name="med-met">Contratar</button>
                                         </div>
                                         <div class="col-md-6">
@@ -273,7 +279,9 @@
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
                                             </div>
-                                            <p>Detalles de coberturas</p>
+                                            <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                               <button type="submit" name="med-seg">Contratar</button>
                                       </div>
                                     </div>
@@ -311,7 +319,7 @@
                                           <span>$3,000,000</span>
                                           <div class="i-mark">
                                             <a data-target="con">
-                                              <img src="img/i.svg" class="img-fluid" alt="">
+                                              <img src="img/i.svg" class="img-fluid" alt="">ab
                                             </a>
                                             <div class="main-box">
                                               <div id="con" class="con-box">
@@ -333,7 +341,7 @@
                                     <div class="row met-row text-center">
                                         <div class="col-md-4">
                                             <div class="box">
-                                                <img src="img/metlife.png" class="img-fluid" alt="">
+                                                <img src="img/metlife.png" class="img-fluid mb-4" alt="">
                                                 <p class="anual3">Anual (Pago único)</p>
                                                 <div class="pp">
                                                   <span>$</span>
@@ -345,7 +353,9 @@
                                                 <p class="bp">Protección por Invalidez</p>
 
                                             </div>
-                                            <p>Detalles de coberturas</p>
+                                            <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                                 <button type="submit" name="com-met">Contratar</button>
                                         </div>
                                         <div class="col-md-4">
@@ -361,7 +371,9 @@
                                                 <p class="bp">Muerte Accidental</p>
                                                 <p class="bp">Protección por Invalidez</p>
                                             </div>
-                                            <p>Detalles de coberturas</p>
+                                            <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                               <button type="submit" name="com-seg">Contratar</button>
                                       </div>
                                       <div class="col-md-4">
@@ -377,7 +389,9 @@
                                             <p class="bp">Muerte Accidental</p>
                                             <p class="bp">Protección por Invalidez</p>
                                         </div>
-                                        <p>Detalles de coberturas</p>
+                                        <a href="#" class="detail-btn">
+                                              <p>Detalles de coberturas</p>
+                                            </a>
                                           <button  type="submit" name="com-aya">Contratar</button>
                                   </div>
                                     </div>

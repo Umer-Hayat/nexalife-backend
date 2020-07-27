@@ -163,17 +163,18 @@ if (isset($_POST['submit'])) {
   $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `life2_name`, `life2_gender`, `life2_date`, `life2_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`, `official_pic1`, `official_pic2`, `address_pic`) VALUES ('$exp_name','$exp_gender','$exp_year','$exp_postal_code','$mfname1','$mfage1','$mmname1','$mmage1','$mbname1','$mbage1','$mgname1','$mgage1','$moname1','$moage1','$soloname1','$soloage1','$sfname1','$sfage1','$smname1','$smage1','$sbname1','$sbage1','$sgname1','$sgage1','$soname1','$soage1','$sendusing','$life2_name','$life2_gender','$life2_date','$life2_postal_code','$is_smoker','$do_exercise','$do_practise','$insurace','$type','$price','$cont_name','$cont_last_name','$m_last_name','$mail','$celular','$rfc','$nationality','$sex','$profession','$street','$no_ext','$interior','$suburb','$postal','$state','$country','$foto1','$foto2','$foto2')";
 
   if ($con->query($query) === TRUE) {
-    echo "<script>alert('data inserted successfully')</script>";
+    // echo "<script>alert('data inserted successfully')</script>";
     session_destroy();
   // echo "New record created successfully";
 
+    echo '<script>window.location.replace("te.php")</script>';
 } else {
   echo "Error: " . $query . "<br>" . $con->error;
 }
 
-$con->close();
 
 }
+
 
  ?>
 
@@ -240,7 +241,26 @@ $con->close();
             <span class="reg"><i class="fa fa-angle-left"></i> <a style="text-decoration: none; color: silver;" href="direccion.php">Regresar</a></span>
         </div>
         <div class="col-md-2">
-            <button type="submit" onclick="alert('Your data will be stored in database')" name="submit">Continuar</button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal">Continuar</button>
+            <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>They will contact you to schedule the appointment</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" name="submit" class="btn btn-primary">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-md-4"></div>
     </div>

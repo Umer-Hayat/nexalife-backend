@@ -182,12 +182,21 @@ body {
   width: 13%;
 }
 
+.range-div .right .i-mark a {
+  color: white;
+}
+
+.range-div .right .i-mark a:hover ~ .main-box .con-box {
+  display: block;
+}
+
 .range-div .right .i-mark .main-box {
   position: absolute;
   left: 0;
 }
 
 .range-div .right .i-mark .main-box .con-box {
+  display: none;
   position: relative;
   width: 210px;
   border: 1px solid #a6a6a6;
@@ -312,6 +321,10 @@ body {
   margin: 10px 0;
 }
 
+.met-row .detail-btn {
+  color: black;
+}
+
 .met-row p {
   font-size: 0.9rem;
 }
@@ -392,15 +405,11 @@ body {
     width: 8% !important;
   }
   .right .i-mark .con-box {
-    display: none;
     margin-left: -180px !important;
     margin-top: 30px !important;
   }
   .right .i-mark .con-box::after {
     left: 166px !important;
-  }
-  .right .i-mark a:active + .main-box .con-box {
-    display: block !important;
   }
 }
 
@@ -422,9 +431,6 @@ body {
   }
   .con-box::after {
     left: 166px !important;
-  }
-  a:active + .main-box .con-box {
-    display: block !important;
   }
 }
 
