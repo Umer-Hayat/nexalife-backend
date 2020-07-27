@@ -40,8 +40,18 @@
     <div class="col-md-4"></div>
     <div class="col-md-4 text-center">
       <div class="box">
-        
-      <img src="img/metlife.png" class="img-fluid" alt="">
+        <?php if (isset($_SESSION['pic']) ) {
+          if ($_SESSION['pic'] == "met") {
+            echo '<img src="img/metlife.png" class="img-fluid" alt="pic">';
+          }elseif ($_SESSION['pic'] == "seg") {
+            echo '<img src="img/seguros.png" class="img-fluid" alt="pic">';
+          }elseif ($_SESSION['pic'] == "aya") {
+            echo '<img style="width:30%;" src="img/aya.png" class="img-fluid" alt="pic">';
+          }
+        }else{ ?>
+      <img src="img/metlife.png" class="img-fluid" alt="pic">
+    <?php } ?>
+
         <p> <?php if (isset($_SESSION['type'])) {
           echo $_SESSION['type'];
         }else{ ?> Anual <?php } ?> (Pago único)</p>
@@ -49,9 +59,20 @@
           echo $_SESSION['price'];
         }else{ ?> 2,540.00 <?php } ?></p>
         <p>Coberturas</p>
-        <p class="bp">Protección por fallecimiento</p>
-        <p class="bp">Muerte Accidental</p>
-        <p class="bp">Protección por Invalidez</p>
+        <?php if (isset($_SESSION['tab'])) {
+          if ($_SESSION['tab'] == "1") {
+            echo "<p class='bp'>Protección por fallecimiento</p>";
+          }elseif($_SESSION['tab'] == "2"){
+            echo "<p class='bp'>Protección por fallecimiento</p><p class='bp'>Muerte Accidental</p>";
+          }elseif ($_SESSION['tab'] == "3") {
+            echo "<p class='bp'>Protección por fallecimiento</p><p class='bp'>Muerte Accidental</p><p class='bp'>Protección por Invalidez</p>";
+          }
+          
+        }else{ ?>
+        <p class='bp'>Protección por fallecimiento</p>
+        <p class='bp'>Muerte Accidental</p>
+        <p class='bp'>Protección por Invalidez</p>
+      <?php } ?>
     </div>
     </div>
     <div class="col-md-4"></div>

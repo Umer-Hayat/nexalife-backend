@@ -32,42 +32,56 @@
         $_SESSION['insurace'] = "basicmet";
         $_SESSION['type'] = $_POST['select'];
         $_SESSION['price'] = $_POST['pro-price1'];
+        $_SESSION['tab'] = "1";
+        $_SESSION['pic'] = "met";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['pro-seg'])) {
         $_SESSION['insurace'] = "basicseg";
         $_SESSION['type'] = $_POST['select'];
         $_SESSION['price'] = $_POST['pro-price2'];
+        $_SESSION['tab'] = "1";
+        $_SESSION['pic'] = "seg";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['med-met'])) {
         $_SESSION['insurace'] = "mediamet";
         $_SESSION['type'] = $_POST['select2'];
         $_SESSION['price'] = $_POST['med-price1'];
+        $_SESSION['tab'] = "2";
+        $_SESSION['pic'] = "met";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['med-seg'])) {
         $_SESSION['insurace'] = "mediaseg";
         $_SESSION['type'] = $_POST['select2'];
         $_SESSION['price'] = $_POST['med-price2'];
+        $_SESSION['tab'] = "2";
+        $_SESSION['pic'] = "seg";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-met'])) {
         $_SESSION['insurace'] = "compmet";
         $_SESSION['type'] = $_POST['select3'];
         $_SESSION['price'] = $_POST['com-price1'];
+        $_SESSION['tab'] = "3";
+        $_SESSION['pic'] = "met";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-seg'])) {
         $_SESSION['insurace'] = "compseg";
         $_SESSION['type'] = $_POST['select3'];
-        $_SESSION['com-seg'] = $_POST['com-price2'];
+        $_SESSION['price'] = $_POST['com-price2'];
+        $_SESSION['tab'] = "3";
+        $_SESSION['pic'] = "seg";
         echo '<script>window.location.replace("estas.php")</script>';
     }
     if (isset($_POST['com-aya'])) {
         $_SESSION['insurace'] = "compaya";
         $_SESSION['type'] = $_POST['select3'];
         $_SESSION['price'] = $_POST['com-price3'];
+        $_SESSION['tab'] = "3";
+        $_SESSION['pic'] = "aya";
         echo '<script>window.location.replace("estas.php")</script>';
     }
 
@@ -79,7 +93,9 @@
 
 <section class="body-area">
     <div class="container text-center">
-        <p class="head-text">¡Víctor, tu cotización está lista!</p>
+        <p class="head-text"><?php if (isset($_SESSION['life2_name'])) {
+           echo $_SESSION['life2_name'];
+        }else{ ?>Víctor <?php } ?>, tu cotización está lista!</p>
         <div class="tabs-div">
 
        
@@ -112,95 +128,76 @@
                 <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel" aria-labelledby="heading-A">
                     <div class="card-body">
                         <div class="pro-tab">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-1"></div>
-                                <div class="col-lg-6 col-md-10">
-                                    <div class="range-div">
-                                        <span class="float-left">$200,000</span>
-                                        <span class="cen">$ <span id="textInput1">2500,000</span></span>
-                                        <div class="right">
-                                          <span>$30,000,000</span>
-                                          <div class="i-mark">
-                                            <a data-target="con">
-                                              <img src="img/i.svg" class="img-fluid" alt="">
-                                            </a>
-                                            <div class="main-box">
-                                              <div id="con" class="con-box">
-                                                <p>En esta sección podrás personalizar la suma asegurada que 
-                                                  recibirán tus seres queridos. Te recomendamos  dar clic en 
-                                                  el botón “Detalles de cobertura” para que nuestro CEO te explique a detalla las coberturas que incluye cada paquete</p>
-                                              </div>
-                                            </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-1"></div>
+                            <div class="col-lg-6 col-md-10">
+                                <div class="range-div">
+                                    <span class="float-left">$200,000</span>
+                                    <span class="cen">$ 
+                                    <!-- <span id="textInput1">2500,000</span> -->
+                                <input type="text" value="200000" disabled id="num1"></span>
+                                    <div class="right">
+                                      <span>$3,000,000</span>
+                                      <div class="i-mark">
+                                        <a data-target="con">
+                                          <img src="img/i.svg" class="img-fluid" alt="">
+                                        </a>
+                                        <div class="main-box">
+                                          <div id="con" class="con-box">
+                                            <p>En esta sección podrás personalizar la suma asegurada que 
+                                              recibirán tus seres queridos. Te recomendamos  dar clic en 
+                                              el botón “Detalles de cobertura” para que nuestro CEO te explique a detalla las coberturas que incluye cada paquete</p>
                                           </div>
                                         </div>
-                                        <!-- <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput1');" class="slider"> -->
-
-                                        <input type="range" name="rangeInput" list="tickmarks" onchange="updateTextInput(this.value, 'textInput1');" class="slider">
-
-                                        <datalist id="tickmarks">
-                                          <option value="200000" label="0%"></option>
-                                          <option value="400000"></option>
-                                          <option value="500000"></option>
-                                          <option value="600000"></option>
-                                          <option value="800000"></option>
-                                          <option value="1000000"></option>
-                                          <option value="1200000"></option>
-                                          <option value="1400000"></option>
-                                          <option value="1500000"  label="50%"></option>
-                                          <option value="1600000"></option>
-                                          <option value="1800000"></option>
-                                          <option value="2000000"></option>
-                                          <option value="2200000"></option>
-                                          <option value="2400000"></option>
-                                          <option value="2500000"></option>
-                                          <option value="2600000"></option>
-                                          <option value="2800000"></option>
-                                          <option value="3000000" label="100%"></option>
-                                        </datalist>
-                                      
-                                        <br>
-                                        <input type="radio" value="anual" checked name="select" id="anual">
-                                        <label for="anual" class="anu-btn">Anual</label>
-                                        <input type="radio" value="mensual" name="select" id="mensual">
-                                        <label for="mensual" class="men-btn">Mensual</label>
-                                    </div>
-                                    <div class="met-row">
-                                    <div class="row met-row text-center">
-                                        <div class="col-md-6">
-                                            <div class="box">
-                                                <img src="img/metlife.png" class="img-fluid" alt="">
-                                                <p class="anual1">Anual (Pago único)</p>
-                                                <input type="hidden" value="2000.00" name="pro-price1">
-                                                <p class="price">$2,000.00</p>
-                                                <p>Coberturas</p>
-                                                <p class="bp">Protección por fallecimiento</p>
-                                                
-                                            </div>
-                                            <p>Detalles de coberturas</p>
-                                                <button type="submit" name="pro-met">Contratar</button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="box">
-                                                <img src="img/seguros.png" class="img-fluid" alt="">
-                                                <p class="anual1">Anual (Pago único)</p>
-                                                <input type="hidden" value="2540.00" name="pro-price2">
-                                                <p class="price">$2,540.00</p>
-                                                <p>Coberturas</p>
-                                                <p class="bp">Protección por fallecimiento</p>
-                                                
-                                            </div>
-                                            <p>Detalles de coberturas</p>
-                                              <button  type="submit" name="pro-seg">Contratar</button>
                                       </div>
                                     </div>
-                                    <div class="text-center">
-                                    <button class="phone-btn"><i class="fa fa-phone"></i> Hablar con un asesor</button>
+                                    <input type="range" min="200000" name="rangeInput" value="200000" max="3000000" step="100000" onchange="updateTextInput(this.value, 'out-price1');" class="slider" oninput="num1.value = this.value"><br>
+                                    <input type="radio" value="anual" checked name="select" id="anual">
+                                    <label for="anual" class="anu-btn">Anual</label>
+                                    <input type="radio" value="mensual" name="select" id="mensual">
+                                    <label for="mensual" class="men-btn">Mensual</label>
+                                </div>
+                                <div class="met-row">
+                                <div class="row met-row text-center">
+                                    <div class="col-md-6">
+                                        <div class="box">
+                                            <img src="img/metlife.png" class="img-fluid" alt="">
+                                            <p class="anual1">Anual (Pago único)</p>
+                                            <div class="pp">
+                                              <span>$</span>
+                                              <input class="price out-price1" type="text" value="200000" name="pro-price1">
+                                            </div>
+                                            <p>Coberturas</p>
+                                            <p class="bp">Protección por fallecimiento</p>
+                                            
+                                        </div>
+                                        <p>Detalles de coberturas</p>
+                                            <button type="submit" name="pro-met">Contratar</button>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="box">
+                                            <img src="img/seguros.png" class="img-fluid" alt="">
+                                            <p class="anual1">Anual (Pago único)</p>
+                                            <div class="pp">
+                                              <span>$</span>
+                                              <input class="price out-price1" type="text" value="200000" name="pro-price2">
+                                            </div>
+                                            <p>Coberturas</p>
+                                            <p class="bp">Protección por fallecimiento</p>
+                                            
+                                        </div>
+                                        <p>Detalles de coberturas</p>
+                                          <button  type="submit" name="pro-seg">Contratar</button>
+                                  </div>
                                 </div>
+                                <div class="text-center">
+                                <button class="phone-btn"><i class="fa fa-phone"></i> Hablar con un asesor</button>
                                 </div>
-                                <div class="col-lg-3 col-md-1"></div>
                             </div>
+                            </div>
+                            <div class="col-lg-3 col-md-1"></div>
                         </div>
+                    </div>
                     </div>
                     </div>
               </div>
@@ -221,9 +218,10 @@
                                 <div class="col-lg-6 col-md-10">
                                     <div class="range-div">
                                         <span class="float-left">$200,000</span>
-                                        <span class="cen">$<span  id="textInput2">2500,000</span></span>
+                                        <span class="cen">$ 
+                                          <input type="text" value="200000" disabled id="num2"></span>
                                         <div class="right">
-                                          <span>$30,000,000</span>
+                                          <span>$3,000,000</span>
                                           <div class="i-mark">
                                             <a data-target="con">
                                               <img src="img/i.svg" class="img-fluid" alt="">
@@ -238,8 +236,7 @@
                                           </div>
                                         </div>
                                         
-                                        <!-- <input type="range"  min="0" max="100"> -->
-                                        <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput2');" class="slider">
+                                         <input type="range" min="200000" name="rangeInput" value="200000" max="3000000" step="100000" onchange="updateTextInput(this.value, 'out-price2');" class="slider" oninput="num2.value = this.value"><br>
                                         <br>
                                         <input type="radio" value="anual" checked name="select2" id="anual2">
                                         <label for="anual2" class="anu-btn">Anual</label>
@@ -253,8 +250,10 @@
                                             <div class="box">
                                                 <img src="img/metlife.png" class="img-fluid" alt="">
                                                 <p class="anual2">Anual (Pago único)</p>
-                                                <input type="hidden" value="2000.00" name="med-price1">
-                                                <p class="price">$2,000.00</p>
+                                                <div class="pp">
+                                                  <span>$</span>
+                                                  <input class="price out-price2" type="text" value="200000" name="med-price1">
+                                                </div>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
@@ -266,8 +265,10 @@
                                             <div class="box">
                                                 <img src="img/seguros.png" class="img-fluid" alt="">
                                                 <p class="anual2">Anual (Pago único)</p>
-                                                <input type="hidden" value="2540.00" name="med-price2">
-                                                <p class="price">$2,540.00</p>
+                                                <div class="pp">
+                                                  <span>$</span>
+                                                  <input class="price out-price2" type="text" value="200000" name="med-price2">
+                                                </div>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
@@ -304,9 +305,10 @@
                                 <div class="col-lg-8 col-md-10">
                                     <div class="range-div">
                                         <span class="float-left">$200,000</span>
-                                        <span class="cen">$<span  id="textInput3">2500,000</span></span>
+                                        <span class="cen">$ 
+                                          <input type="text" value="200000" disabled id="num3"></span>
                                         <div class="right">
-                                          <span>$30,000,000</span>
+                                          <span>$3,000,000</span>
                                           <div class="i-mark">
                                             <a data-target="con">
                                               <img src="img/i.svg" class="img-fluid" alt="">
@@ -320,7 +322,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                        <input type="range" min="200000" name="rangeInput" value="2500000" max="30000000"  onchange="updateTextInput(this.value, 'textInput3');" class="slider">
+                                        <input type="range" min="200000" name="rangeInput" value="200000" max="3000000" step="100000" onchange="updateTextInput(this.value, 'out-price3');" class="slider" oninput="num3.value = this.value"><br>
                                         <br>
                                         <input type="radio" value="anual" checked name="select3" id="anual3">
                                         <label for="anual3" class="anu-btn">Anual</label>
@@ -333,8 +335,10 @@
                                             <div class="box">
                                                 <img src="img/metlife.png" class="img-fluid" alt="">
                                                 <p class="anual3">Anual (Pago único)</p>
-                                                <input type="hidden" value="2000.00" name="com-price1">
-                                                <p class="price">$2,000.00</p>
+                                                <div class="pp">
+                                                  <span>$</span>
+                                                  <input class="price out-price3" type="text" value="200000" name="com-price1">
+                                                </div>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
@@ -348,8 +352,10 @@
                                             <div class="box">
                                                 <img src="img/seguros.png" class="img-fluid" alt="">
                                                 <p class="anual3">Anual (Pago único)</p>
-                                                <input type="hidden" value="2540.00" name="com-price2">
-                                                <p class="price">$2,540.00</p>
+                                                <div class="pp">
+                                                  <span>$</span>
+                                                  <input class="price out-price3" type="text" value="200000" name="com-price2">
+                                                </div>
                                                 <p>Coberturas</p>
                                                 <p class="bp">Protección por fallecimiento</p>
                                                 <p class="bp">Muerte Accidental</p>
@@ -362,8 +368,10 @@
                                         <div class="box">
                                             <img src="img/aya.png" class="img-fluid aya-img" alt="">
                                             <p class="anual3">Anual (Pago único)</p>
-                                            <input type="hidden" value="2540.00" name="com-price3">
-                                            <p class="price">$2,540.00</p>
+                                            <div class="pp">
+                                                  <span>$</span>
+                                                  <input class="price out-price3" type="text" value="200000" name="com-price3">
+                                                </div>
                                             <p>Coberturas</p>
                                             <p class="bp">Protección por fallecimiento</p>
                                             <p class="bp">Muerte Accidental</p>
@@ -401,8 +409,9 @@
 <?php include("include/footer.php") ?>
 
     <script type="text/javascript">
-        function updateTextInput(val , id) {
-          document.getElementById(id).innerHTML=val; 
+        function updateTextInput(valu , cal) {
+          $('.'+cal).val(valu);
+          $( ".price" ).html( valu );
         }
     $(document).ready(function(){
     $('input[name=select]').on('change', function(){

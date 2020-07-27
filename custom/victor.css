@@ -158,7 +158,13 @@ body {
 .range-div .cen {
   position: absolute;
   top: -30px;
-  left: 42%;
+  left: 30%;
+}
+
+.range-div .cen input {
+  border: none;
+  width: 60%;
+  background-color: white !important;
 }
 
 .range-div .right {
@@ -285,9 +291,19 @@ body {
   font-size: 0.9rem;
 }
 
+.met-row .box .pp {
+  margin-left: 10px;
+}
+
 .met-row .box .price {
   color: #a6a6a6;
   margin: 5px 0 20px 0;
+  width: 50%;
+  border: none;
+}
+
+.met-row .box .price:focus {
+  outline: none;
 }
 
 .met-row .box .bp {
@@ -362,6 +378,9 @@ body {
   }
   .box {
     margin: 20px 5px !important;
+  }
+  .pp {
+    margin-left: 30px !important;
   }
   .right {
     margin-right: -50px !important;
