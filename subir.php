@@ -1,3 +1,6 @@
+<?php  
+require_once 'vendor/autoload.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +31,116 @@
 <?php include("include/header.php") ?>
 <?php include("include/db.php") ?>
 <?php
+
+ extract($_SESSION);
+
+ $body = '
+<table>
+  <tr>
+    <td class="label">Name:</td>
+    <td>'. $life2_name .'</td>
+  </tr>
+  <tr>
+    <td class="label">Gender:</td>
+    <td>' . $life2_gender . '</td>
+  </tr>
+  <tr>
+    <td class="label">Date Of Birth:</td>
+    <td>' . $life2_date . '</td>
+  </tr>
+  <tr>
+    <td class="label">Postal Code:</td>
+    <td>' . $life2_postal_code . '</td>
+  </tr>
+  <tr>
+    <td class="label">Are You Smoker:</td>
+    <td>' . $is_smoker . '</td>
+  </tr>
+  <tr>
+    <td class="label">Do Exercise:</td>
+    <td>' . $do_exercise . '</td>
+  </tr>
+  <tr>
+    <td class="label">Do Practise:</td>
+    <td>' . $do_practise . '</td>
+  </tr>
+  <tr>
+    <td class="label">Insurace:</td>
+    <td>' . $insurace . '</td>
+  </tr>
+  <tr>
+    <td class="label">Insurance Type:</td>
+    <td>' . $type . '</td>
+  </tr>
+  <tr>
+    <td class="label">Insurance Price:</td>
+    <td>' . $price . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Name:</td>
+    <td>' . $cont_name . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Last Name:</td>
+    <td>' . $cont_last_name . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Mother Name:</td>
+    <td>' . $m_last_name . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Email:</td>
+    <td>' . $mail . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Celluler:</td>
+    <td>' . $celular . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor RFC No:</td>
+    <td>' . $rfc . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor nationallity:</td>
+    <td>' . $nationality . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Sex:</td>
+    <td>' . $sex . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Profession:</td>
+    <td>' . $profession . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Street No:</td>
+    <td>' . $street . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor No_Ext:</td>
+    <td>' . $no_ext . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Interior:</td>
+    <td>' . $interior . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Suburb:</td>
+    <td>' . $suburb . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor Postal Code:</td>
+    <td>' . $postal . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor state:</td>
+    <td>' . $state . '</td>
+  </tr>
+  <tr>
+    <td class="label">Contractor country:</td>
+    <td>' . $country . '</td>
+  </tr>
+</table>';
 
 
 if (isset($_POST['submit'])) {
@@ -159,15 +272,36 @@ if (isset($_POST['submit'])) {
       $soage1 = "_";
   }
 
-  extract($_SESSION);
+ 
+
   $query = "INSERT INTO `user_detail`(`exp_name`, `exp_gender`, `exp_year`, `exp_postal_code`, `mfname`, `mfage`, `mmname`, `mmage`, `mbname`, `mbage`, `mgname`, `mgage`, `moname`, `moage`, `soloname`, `soloage`, `sfname`, `sfage`, `smname`, `smage`, `sbname`, `sbage`, `sgname`, `sgage`, `soname`, `soage`, `sendusing`, `life2_name`, `life2_gender`, `life2_date`, `life2_postal_code`, `is_smoker`, `do_exercise`, `do_practice`, `insurance-title`, `inurance_type`, `insuraance_price`, `cont_name`, `cont_last_name`, `m_last_name`, `mail`, `celular`, `rfc`, `nationality`, `sex`, `profession`, `street`, `no_ext`, `interior`, `suburb`, `postal`, `state`, `country`, `official_pic1`, `official_pic2`, `address_pic`) VALUES ('$exp_name','$exp_gender','$exp_year','$exp_postal_code','$mfname1','$mfage1','$mmname1','$mmage1','$mbname1','$mbage1','$mgname1','$mgage1','$moname1','$moage1','$soloname1','$soloage1','$sfname1','$sfage1','$smname1','$smage1','$sbname1','$sbage1','$sgname1','$sgage1','$soname1','$soage1','$sendusing','$life2_name','$life2_gender','$life2_date','$life2_postal_code','$is_smoker','$do_exercise','$do_practise','$insurace','$type','$price','$cont_name','$cont_last_name','$m_last_name','$mail','$celular','$rfc','$nationality','$sex','$profession','$street','$no_ext','$interior','$suburb','$postal','$state','$country','$foto1','$foto2','$foto2')";
 
   if ($con->query($query) === TRUE) {
-    // echo "<script>alert('data inserted successfully')</script>";
-    session_destroy();
+       
+       try{
+    $transprt = (new Swift_SmtpTransport('smtp.gmail.com',465,'ssl'))->setUsername('student.information.school@gmail.com')->setPassword('phpprojectA7');
+    $transprt->setStreamOptions([
+        'ssl' => ['allow_self_signed' => true, 'verify_peer' => false, 'verify_peer_name' => false]
+          ]);
+        $mailer = new Swift_Mailer($transprt);
+       
+        $message = (new Swift_Message("Student Information System-Password Reset"))->setFrom('student.information.school@gmail.com')->setTo('umerhayat520@gmail.com')->setBody($body,'text/html');
+        $result = $mailer->send($message);
+        if ($result) {
+          echo "<script>alert('Email sent successfully')</script>";
+          session_destroy();
+          echo '<script>window.location.replace("te.php")</script>';
+        }
+        else
+        {
+          echo "Email is not sent";
+        }
+    }catch(Exception $e){
+      echo $e;
+    }
   // echo "New record created successfully";
 
-    echo '<script>window.location.replace("te.php")</script>';
+    
 } else {
   echo "Error: " . $query . "<br>" . $con->error;
 }
