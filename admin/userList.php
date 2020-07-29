@@ -3,7 +3,7 @@
 $st=new UserManagement();
 if(isset($_GET['del']))
 {
-    $result=$st->deleteUser($_GET['del']);
+    $result=$st->deleteitem($_GET['del'], "user_detail");
     if($result)
        echo " <script>alert('User Details successfully Deleted');</script>";
     echo '<script>window.location.replace("userList.php")</script>';
