@@ -56,8 +56,9 @@ if (isset($_POST['submit'])) {
             <?php } ?>
               <label for="sig">
                   <img src="img/sigarate.svg" class="img-fluid" alt="">
+                  <p>Si</p>
               </label>
-              <p>Si</p>
+              
               <button type="button"> <a style="text-decoration: none; color: white;" href="segoru.php">Regresar</a></button>
           </div>
       </div>
@@ -70,8 +71,9 @@ if (isset($_POST['submit'])) {
           <?php } ?>
             <label for="not">
                 <img src="img/not.svg" class="img-fluid" alt="">
+                <p>No</p>
             </label>
-            <p>No</p>
+            
             <button type="submit" name="submit">Continuar</button>
         </div>
       </div>
