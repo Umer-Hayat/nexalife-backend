@@ -149,6 +149,14 @@ button:focus {
   margin-left: 10px;
 }
 
+.body-area .radio label input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: #d8f8f4;
+  text-align: center;
+}
+
 .body-area button {
   background-color: #deadf9;
   border: none;

@@ -29,7 +29,16 @@
 <?php
 if (isset($_POST['submit'])) {
   
-  $_SESSION['sendusing'] = $_POST['select'];
+  
+  $value = $_POST['select'];
+  if ($value == 'whatsapp') {
+    $_SESSION['sendusing'] = $value;
+    $_SESSION['sendusing_no'] = $_POST['muchas_whatapp'];
+  }elseif ($value == 'email') {
+     $_SESSION['sendusing'] = $value;
+    $_SESSION['sendusing_no'] = $_POST['muchas_email'];
+  }
+
 
     echo '<script>window.location.replace("segoru.php")</script>';
 
@@ -58,14 +67,16 @@ if (isset($_POST['submit'])) {
         <input type="radio" name="select" value="whatsapp" id="1" autofocus required>
       <?php } ?>
         <label for="1">
-        <input type='text' placeholder='Whats app' name='whatapp'>
+          <input type='text' placeholder='Whats app' name='muchas_whatapp'>
         </label><br>
         <?php if(isset($_SESSION['sendusing']) and $_SESSION['sendusing'] == 'email'){ ?>
               <input type="radio" name="select" id="2" value="email" autofocus required>
             <?php }else{ ?>
         <input type="radio" name="select" id="2" value="email" autofocus required>
       <?php } ?>
-        <label for="2">Correo electrónico</label><br>
+        <label for="2">
+          <input type='email' placeholder='Correo electrónico' name='muchas_email'>
+        </label><br>
         
         <button type="submit" name="submit">Continuar</button>
       </form>
